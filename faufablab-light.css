@@ -7,7 +7,7 @@
 
 /***big blocks***/
 body {
-    font-family:Georgia,Arial,Verdana,sans;
+    font-family:"Myriad Pro","Myriad Web Pro Regular","Lucida Grande",Geneva,Trebuchet MS,sans-serif;
     background:#E1E1E1;
     margin:0em;
     padding: 0em;
@@ -33,13 +33,14 @@ body {
     background:linear-gradient(to bottom, #E4EEC1 0%, #E0E3E3 5em, #F4F7E7 100%);
     margin-bottom:0em;
     margin-top:0em;
-
+    font-size:small;
     padding:2em;
 }
 
 .bottom {
     background:linear-gradient(to bottom, #D0D0D0 0%, #E1E1E1 100%);
     padding:1em;
+    font-size:x-small;
     text-align:center;
 }
 
@@ -50,6 +51,15 @@ body {
     h1{
         border:none;
         border-bottom:1px solid #AAAAAA;
+    }
+
+    /***link***/
+    a {
+        color:#3C80AE;
+        text-decoration:none;
+    }
+    a:hover {
+        text-decoration:underline;
     }
 
     /***table***/
@@ -70,7 +80,16 @@ body {
         background-color: #EDEDED;
     }
 
-/***elements***
+    /***list***/
+    ul li {
+        background:url(https://fablab.fau.de/sites/all/themes/acquia_marina/images/green-bullet.png) no-repeat 0 0.25em;
+        list-style:none;
+        margin:0.75em;
+        padding:0 0 0 1em;
+    }
+
+
+/***inputs***
     /***text inputs***/
     input[type=text] {
         background:#F5F8FA;
