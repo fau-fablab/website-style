@@ -3,7 +3,12 @@ FAU FabLab - Website style
 
 A stylesheet for websites concerning the FAU FabLab.
 
-Use a web page similar to the sheme.html to get the style.
+Instructions
+------------
+
+Download the sheme.html and edit it.
+
+    wget https://raw.githubusercontent.com/fau-fablab/website-style/master/sheme.html
 
 LICENSE
 -------
