@@ -6,13 +6,14 @@ A stylesheet for websites concerning the FAU FabLab.
 Instructions
 ------------
 
-Download the sheme.html and edit it.
+Download the [scheme.html](scheme.html) and edit it.
 
-    wget https://raw.githubusercontent.com/fau-fablab/website-style/master/sheme.html
-
-Or:
-
-    wget https://raw.githubusercontent.com/fau-fablab/website-style/master/sheme.php
+```bash
+# html:
+wget https://raw.githubusercontent.com/fau-fablab/website-style/master/scheme.html
+# php:
+wget https://raw.githubusercontent.com/fau-fablab/website-style/master/scheme.php
+```
 
 LICENSE
 -------
