@@ -43,8 +43,12 @@ a {
   .navbar-default .navbar-brand,
   .navbar-default .navbar-brand:hover,
   .navbar-default .navbar-brand:focus,
-  .navbar-default .navbar-toggle {
-    color: #ffffff;
+  .navbar-default .navbar-toggle,
+  .navbar-default .dropdown .dropdown-toggle,
+  .navbar-default .dropdown .dropdown-toggle:focus,
+  .navbar-default .dropdown-menu li a {
+    color: #ffffff !important;
+    background-color: transparent;
     font-weight: bold;
     -webkit-transition: background .5s;
     -moz-transition: background .5s;
@@ -53,11 +57,14 @@ a {
     transition: background .5s; }
   .navbar-default .navbar-nav li a:hover {
     color: #ffffff;
-    background-color: #A7CE38; }
-  .navbar-default .navbar-nav a:hover,
+    background-color: #A7CE38 !important; }
+  .navbar-default .navbar-nav .dropdown .dropdown-menu {
+    color: #ffffff;
+    background-color: #2D73A3; }
   .navbar-default .navbar-nav .active a:hover,
-  .navbar-default .navbar-nav .active a {
-    color: #275F86;
+  .navbar-default .navbar-nav .active a,
+  .navbar-default .navbar-nav .dropdown.open .dropdown-toggle {
+    color: #275F86 !important;
     background-color: #A7CE38; }
   .navbar-default .navbar-collapse,
   .navbar-default .navbar-form {
@@ -72,9 +79,10 @@ a {
     .navbar-default .navbar-toggle:hover,
     .navbar-default .navbar-toggle:focus:hover {
       background-color: #A7CE38; }
-  .navbar-default .navbar-brand img {
+  .navbar-default a img {
     max-height: 2em;
     margin-top: -0.5em;
+    padding: .1em;
     background-color: #E0E3E3; }
 
 /*# sourceMappingURL=fablab-bootstrap-theme.css.map */
