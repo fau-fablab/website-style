@@ -1,115 +1,117 @@
-/*                     FAU FabLab Bootstrap Theme						*/
+/*                     FAU FabLab Bootstrap Theme                       */
 /* -------------------------------------------------------------------- */
 /* https://github.com/fau-fablab/website-style    License: CC BY-SA 4.0 */
 
 @import "https://code.cdn.mozilla.net/fonts/fira.css";
 
-$fabcube_green:			#209466;
-$fabcube_blue:			#163B64;
-$fabcube_red:			#C42028;
-$highlight_blue:		#2D73A3;
-$highlight_blue_alt:	#275F86;
-$highlight_green:		#A7CE38;
-$highlight_green_alt:	#90B12F;
-$light_green:			#E4EEC1;
-$light_green_alt:		#F4F7E7;
-$dark_gray:				#777777;
-$light_gray:			#E0E3E3;
-$white:					#ffffff;
-$black:					#000000;
+$fabcube_green:         #209466;
+$fabcube_blue:          #163B64;
+$fabcube_red:           #C42028;
+$highlight_blue:        #2D73A3;
+$highlight_blue_alt:    #275F86;
+$highlight_green:       #A7CE38;
+$highlight_green_alt:   #90B12F;
+$light_green:           #E4EEC1;
+$light_green_alt:       #F4F7E7;
+$dark_gray:             #777777;
+$light_gray:            #E0E3E3;
+$white:                 #ffffff;
+$black:                 #000000;
 
 /* GLOBAL STYLES
  *-------------------------------------------------- */
 
 body {
-  font-family: "Fira Sans";
-  color: $black;
-  background: linear-gradient(to bottom, $light_green 0%, $light_gray 5em, $light_green_alt 100%);
+    font-family: "Fira Sans";
+    color: $black;
+    background: linear-gradient(to bottom, $light_green 0%, $light_gray 5em, $light_green_alt 100%);
 }
 
 hr {
-  border-color: $dark_gray;
+    border-color: $dark_gray;
 }
 
 a {
-  -webkit-transition: color 0.5s;
-  -moz-transition: color 0.5s;
-  -o-transition: color 0.5s;
-  -ms-transition: color 0.5s;
-  transition: color 0.5s;
-  color: $fabcube_green;
-}
+    -webkit-transition: color 0.5s;
+    -moz-transition: color 0.5s;
+    -o-transition: color 0.5s;
+    -ms-transition: color 0.5s;
+    transition: color 0.5s;
+    color: $fabcube_green;
 
-a:visited {
-  text-decoration-line: none;
-  color: $fabcube_blue;
-}
+    &:hover {
+        text-decoration-line: none;
+        color: $fabcube_red;
+    }
 
-a:hover {
-  text-decoration-line: none;
-  color: $fabcube_red;
+    &:visited {
+        text-decoration-line: none;
+        color: $fabcube_blue;
+    }
 }
 
 /* JUMBOTRON
  *------------- */
 .jumbotron {
-	color: $light_gray;
-  background: linear-gradient(to bottom, $highlight_blue_alt 0%, $highlight_blue 20%, $highlight_blue_alt 100%);
+    color: $light_gray;
+    background: linear-gradient(to bottom, $highlight_blue_alt 0%, $highlight_blue 20%, $highlight_blue_alt 100%);
 }
 
 /* NAVBAR
  *-------------------------------------------------- */
 .navbar-default {
-	background: linear-gradient(to top, $highlight_green 0%, $highlight_green 0.3em, $highlight_blue_alt 0.3em, $highlight_blue 20%, $highlight_blue_alt 100%);
+    background: linear-gradient(to top, $highlight_green 0%, $highlight_green 0.3em, $highlight_blue_alt 0.3em, $highlight_blue 20%, $highlight_blue_alt 100%);
 
-	.navbar-nav li a,
-	.navbar-brand,
-	.navbar-brand:hover,
-	.navbar-brand:focus,
-	.navbar-toggle {
-		color: $white;
-		font-weight: bold;
-		-webkit-transition: background 0.5s;
-		-moz-transition: background 0.5s;
-		-o-transition: background 0.5s;
-		-ms-transition: background 0.5s;
-		transition: background 0.5s;
-	}
+    .navbar-nav li a,
+    .navbar-brand,
+    .navbar-brand:hover,
+    .navbar-brand:focus,
+    .navbar-toggle {
+        color: $white;
+        font-weight: bold;
+        -webkit-transition: background 0.5s;
+        -moz-transition: background 0.5s;
+        -o-transition: background 0.5s;
+        -ms-transition: background 0.5s;
+        transition: background 0.5s;
+    }
 
-	.navbar-nav li a:hover {
-		color: $white;
-		background-color: $highlight_green;
-	}
+    .navbar-nav li a:hover {
+        color: $white;
+        background-color: $highlight_green;
+    }
 
-	.navbar-nav a:hover,
-	.navbar-nav .active a:hover,
-	.navbar-nav .active a {
-		color: $highlight_blue_alt;
-		background-color: $highlight_green;
-	}
+    .navbar-nav a:hover,
+    .navbar-nav .active a:hover,
+    .navbar-nav .active a {
+        color: $highlight_blue_alt;
+        background-color: $highlight_green;
+    }
 
-	.navbar-collapse,
-	.navbar-form {
-		border-color: transparent;
-	}
+    .navbar-collapse,
+    .navbar-form {
+        border-color: transparent;
+    }
 
-	.navbar-toggle,
-	.navbar-toggle:focus {
-		background-color: transparent;
-		border-color: transparent;
+    .navbar-toggle,
+    .navbar-toggle:focus {
+        background-color: transparent;
+        border-color: transparent;
 
-		.icon-bar {
-			background-color: $white;
-		}
-	}
+        .icon-bar {
+            background-color: $white;
+        }
 
-	.navbar-toggle:hover {
-		background-color: $highlight_green;
-	}
+        &:hover {
+            background-color: $highlight_green;
+        }
+    }
 
-	.navbar-brand img {
-		max-height: 2em;
-		margin-top: -0.5em;
-		background-color: $light_gray;
-	}
+    .navbar-brand img {
+        max-height: 2em;
+        margin-top: -0.5em;
+        background-color: $light_gray;
+    }
 }
+
+/*! vim: ts=4 et */

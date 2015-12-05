@@ -1,4 +1,4 @@
-/*                     FAU FabLab Bootstrap Theme						*/
+/*                     FAU FabLab Bootstrap Theme                       */
 /* -------------------------------------------------------------------- */
 /* https://github.com/fau-fablab/website-style    License: CC BY-SA 4.0 */
 @import "https://code.cdn.mozilla.net/fonts/fira.css";
@@ -19,14 +19,12 @@ a {
   -ms-transition: color 0.5s;
   transition: color 0.5s;
   color: #209466; }
-
-a:visited {
-  text-decoration-line: none;
-  color: #163B64; }
-
-a:hover {
-  text-decoration-line: none;
-  color: #C42028; }
+  a:hover {
+    text-decoration-line: none;
+    color: #C42028; }
+  a:visited {
+    text-decoration-line: none;
+    color: #163B64; }
 
 /* JUMBOTRON
  *------------- */
@@ -68,11 +66,14 @@ a:hover {
     .navbar-default .navbar-toggle .icon-bar,
     .navbar-default .navbar-toggle:focus .icon-bar {
       background-color: #ffffff; }
-  .navbar-default .navbar-toggle:hover {
-    background-color: #A7CE38; }
+    .navbar-default .navbar-toggle:hover,
+    .navbar-default .navbar-toggle:focus:hover {
+      background-color: #A7CE38; }
   .navbar-default .navbar-brand img {
     max-height: 2em;
     margin-top: -0.5em;
     background-color: #E0E3E3; }
+
+/*! vim: ts=4 et */
 
 /*# sourceMappingURL=fablab-bootstrap-theme.css.map */
