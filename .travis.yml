@@ -5,7 +5,7 @@ install: gem install sass
 script: make clean && make
 
 after_success:
-- export COMMITMESSAGE="Updated gh-pages to: $(git log -1 --pretty=%s)"
+- export COMMITMESSAGE="$(git log -1 --pretty=%s)"
 - echo "${COMMITMESSAGE}"
 - cp ./index.html ..
 - cp ./fablab-bootstrap-theme.css ..
