@@ -5,21 +5,22 @@ install: gem install sass
 script: make clean && make
 
 after_success:
-- export COMMIT="$(git log -1 --pretty=%s)"
-- echo "${COMMIT}"
+- export COMMITMESSAGE="Updated gh-pages to: $(git log -1 --pretty=%s)"
+- echo "${COMMITMESSAGE}"
 - cp ./index.html ..
 - cp ./fablab-bootstrap-theme.css ..
+- cp .travis/deploy_key.enc ..
 - git checkout gh-pages
 - mv ../index.html ./index.html
 - mv ../fablab-bootstrap-theme.css ./fablab-bootstrap-theme.css
 - git add ./index.html ./fablab-bootstrap-theme.css
 - git config --global user.name "Travis Auto Build"
 - git config --global user.email "travis@fablab.fau.de"
-- git commit -m "Updated gh-pages to: ${COMMIT}"
+- git commit -m "${COMMITMESSAGE}"
 - eval "$(ssh-agent -s)"
 - openssl aes-256-cbc -K $encrypted_45b5f1ef936e_key -iv $encrypted_45b5f1ef936e_iv
-  -in .travis/deploy_key.enc -out .travis/deploy_key -d
-- chmod 600 .travis/deploy_key
-- ssh-add .travis/deploy_key
+  -in ../deploy_key.enc -out ../deploy_key -d
+- chmod 600 ../deploy_key
+- ssh-add ../deploy_key
 - git remote add deploy git@github.com:fau-fablab/website-style.git
 - git push deploy gh-pages
