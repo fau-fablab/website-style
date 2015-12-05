@@ -33,33 +33,52 @@ body {
     background: linear-gradient(to bottom, $light_green 0%, $light_gray 5em, $light_green_alt 100%);
 }
 
-hr {
-    border-color: $dark_gray;
-}
-
-a {
-    @each $browser in '-webkit-', '-moz-', '-o-', '-ms-', '' {
-        #{$browser}transition: color #{$anim_dur_def};
-    }
-    color: $fabcube_green;
-
-    &:hover {
-        text-decoration-line: none;
-        color: $fabcube_red;
+.content {
+    hr {
+        border-color: $dark_gray;
     }
 
-    &:visited {
-        text-decoration-line: none;
-        color: $fabcube_blue;
+    a {
+        @each $browser in '-webkit-', '-moz-', '-o-', '-ms-', '' {
+            #{$browser}transition: color #{$anim_dur_def};
+        }
+        color: $fabcube_green;
+
+        &:hover {
+            text-decoration-line: none;
+            color: $fabcube_red;
+        }
+
+        &:visited {
+            text-decoration-line: none;
+            color: $fabcube_blue;
+        }
     }
 }
 
 /* JUMBOTRON
  *-------------------------------------------------------------------- */
-.jumbotron {
+.jumbotron,
+footer {
     color: $light_gray;
     background-color: $highlight_blue;
     background: linear-gradient(to bottom, $highlight_blue_alt 0%, $highlight_blue 20%, $highlight_blue_alt 100%);
+
+    a,
+    a:hover,
+    a:visited {
+        text-decoration-line: none;
+        color: $highlight_green;
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
+
+footer {
+    padding-top: 5em;
+    padding-bottom: 5em;
 }
 
 /* NAVBAR

@@ -10,29 +10,44 @@ body {
   background-color: #E0E3E3;
   background: linear-gradient(to bottom, #E4EEC1 0%, #E0E3E3 5em, #F4F7E7 100%); }
 
-hr {
+.content hr {
   border-color: #777777; }
-
-a {
+.content a {
   -webkit-transition: color .5s;
   -moz-transition: color .5s;
   -o-transition: color .5s;
   -ms-transition: color .5s;
   transition: color .5s;
   color: #209466; }
-  a:hover {
+  .content a:hover {
     text-decoration-line: none;
     color: #C42028; }
-  a:visited {
+  .content a:visited {
     text-decoration-line: none;
     color: #163B64; }
 
 /* JUMBOTRON
  *-------------------------------------------------------------------- */
-.jumbotron {
+.jumbotron,
+footer {
   color: #E0E3E3;
   background-color: #2D73A3;
   background: linear-gradient(to bottom, #275F86 0%, #2D73A3 20%, #275F86 100%); }
+  .jumbotron a,
+  .jumbotron a:hover,
+  .jumbotron a:visited,
+  footer a,
+  footer a:hover,
+  footer a:visited {
+    text-decoration-line: none;
+    color: #A7CE38; }
+  .jumbotron img,
+  footer img {
+    max-width: 100%; }
+
+footer {
+  padding-top: 5em;
+  padding-bottom: 5em; }
 
 /* NAVBAR
  *-------------------------------------------------------------------- */
