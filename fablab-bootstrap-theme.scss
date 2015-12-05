@@ -1,9 +1,11 @@
-/*                     FAU FabLab Bootstrap Theme                       */
-/* -------------------------------------------------------------------- */
-/* https://github.com/fau-fablab/website-style    License: CC BY-SA 4.0 */
+/*                     FAU FabLab Bootstrap Theme
+ * --------------------------------------------------------------------
+ * https://github.com/fau-fablab/website-style    License: CC BY-SA 4.0 */
 
 @import "https://code.cdn.mozilla.net/fonts/fira.css";
 
+// color palette
+//--------------------------------------------------------------------
 $fabcube_green:         #209466;
 $fabcube_blue:          #163B64;
 $fabcube_red:           #C42028;
@@ -18,8 +20,11 @@ $light_gray:            #E0E3E3;
 $white:                 #ffffff;
 $black:                 #000000;
 
+// other vars
+$anim_dur_def: ".5s"; // the default animation duration
+
 /* GLOBAL STYLES
- *-------------------------------------------------- */
+ *-------------------------------------------------------------------- */
 
 body {
     font-family: "Fira Sans";
@@ -32,11 +37,9 @@ hr {
 }
 
 a {
-    -webkit-transition: color 0.5s;
-    -moz-transition: color 0.5s;
-    -o-transition: color 0.5s;
-    -ms-transition: color 0.5s;
-    transition: color 0.5s;
+    @each $browser in '-webkit-', '-moz-', '-o-', '-ms-', '' {
+        #{$browser}transition: color #{$anim_dur_def};
+    }
     color: $fabcube_green;
 
     &:hover {
@@ -51,14 +54,14 @@ a {
 }
 
 /* JUMBOTRON
- *------------- */
+ *-------------------------------------------------------------------- */
 .jumbotron {
     color: $light_gray;
     background: linear-gradient(to bottom, $highlight_blue_alt 0%, $highlight_blue 20%, $highlight_blue_alt 100%);
 }
 
 /* NAVBAR
- *-------------------------------------------------- */
+ *-------------------------------------------------------------------- */
 .navbar-default {
     background: linear-gradient(to top, $highlight_green 0%, $highlight_green 0.3em, $highlight_blue_alt 0.3em, $highlight_blue 20%, $highlight_blue_alt 100%);
 
@@ -69,11 +72,9 @@ a {
     .navbar-toggle {
         color: $white;
         font-weight: bold;
-        -webkit-transition: background 0.5s;
-        -moz-transition: background 0.5s;
-        -o-transition: background 0.5s;
-        -ms-transition: background 0.5s;
-        transition: background 0.5s;
+        @each $browser in '-webkit-', '-moz-', '-o-', '-ms-', '' {
+            #{$browser}transition: background #{$anim_dur_def};
+        }
     }
 
     .navbar-nav li a:hover {
@@ -114,4 +115,4 @@ a {
     }
 }
 
-/*! vim: ts=4 et */
+// vim: ts=4 et
