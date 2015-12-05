@@ -12,10 +12,12 @@ after_success:
     - mv ../index.html ./index.html
     - mv ../fablab-bootstrap-theme.css ./fablab-bootstrap-theme.css
     - git add ./index.html ./fablab-bootstrap-theme.css
-    - git commit -m "${COMMIT}"
+    - git config --global user.name "Travis Auto Build"
+    - git cinfig --global user.email "travis@fablab.fau.de"
+    - git commit -m "Updated gh-pages to: ${COMMIT}"
     - eval "$(ssh-agent -s)" #start the ssh agent
     - openssl aes-256-cbc -K $encrypted_6f2e3add48e4_key -iv $encrypted_6f2e3add48e4_iv -in .travis/id_rsa.enc -out .travis/id_rsa -d
-    - chmod 600 .travis/deploy_key.pem # this key should have push access
-    - ssh-add .travis/deploy_key.pem
+    - chmod 600 .travis/id_rsa # this key should have push access
+    - ssh-add .travis/id_rsa
     - git remote add deploy git@github.com:fau-fablab/website-style.git
     - git push deploy gh-pages
