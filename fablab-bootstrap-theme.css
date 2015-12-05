@@ -7,6 +7,7 @@
 body {
   font-family: "Fira Sans";
   color: #000000;
+  background-color: #E0E3E3;
   background: linear-gradient(to bottom, #E4EEC1 0%, #E0E3E3 5em, #F4F7E7 100%); }
 
 hr {
@@ -30,11 +31,13 @@ a {
  *-------------------------------------------------------------------- */
 .jumbotron {
   color: #E0E3E3;
+  background-color: #2D73A3;
   background: linear-gradient(to bottom, #275F86 0%, #2D73A3 20%, #275F86 100%); }
 
 /* NAVBAR
  *-------------------------------------------------------------------- */
 .navbar-default {
+  background-color: #2D73A3;
   background: linear-gradient(to top, #A7CE38 0%, #A7CE38 0.3em, #275F86 0.3em, #2D73A3 20%, #275F86 100%); }
   .navbar-default .navbar-nav li a,
   .navbar-default .navbar-brand,

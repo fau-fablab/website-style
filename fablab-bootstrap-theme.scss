@@ -29,6 +29,7 @@ $anim_dur_def: ".5s"; // the default animation duration
 body {
     font-family: "Fira Sans";
     color: $black;
+    background-color: $light_gray;
     background: linear-gradient(to bottom, $light_green 0%, $light_gray 5em, $light_green_alt 100%);
 }
 
@@ -57,12 +58,14 @@ a {
  *-------------------------------------------------------------------- */
 .jumbotron {
     color: $light_gray;
+    background-color: $highlight_blue;
     background: linear-gradient(to bottom, $highlight_blue_alt 0%, $highlight_blue 20%, $highlight_blue_alt 100%);
 }
 
 /* NAVBAR
  *-------------------------------------------------------------------- */
 .navbar-default {
+    background-color: $highlight_blue;
     background: linear-gradient(to top, $highlight_green 0%, $highlight_green 0.3em, $highlight_blue_alt 0.3em, $highlight_blue 20%, $highlight_blue_alt 100%);
 
     .navbar-nav li a,
