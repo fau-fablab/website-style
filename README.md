@@ -3,6 +3,8 @@ FAU FabLab - Website style
 
 A bootstrap theme for websites of FAU FabLab.
 
+[![Build Status](https://travis-ci.org/fau-fablab/website-style.svg)](https://travis-ci.org/fau-fablab/website-style)
+
 Usage
 -----
 
