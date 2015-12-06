@@ -1,6 +1,6 @@
 .PHONY: clean
 
-fablab-bootstrap-theme.css: fablab-bootstrap-theme.scss
+fablab-bootstrap-theme.css: fablab-bootstrap-theme.scss mixins.scss
 	sass $< $@
 
 clean:

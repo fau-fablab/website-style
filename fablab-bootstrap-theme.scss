@@ -3,6 +3,7 @@
  * https://github.com/fau-fablab/website-style    License: CC BY-SA 4.0 */
 
 @import "https://code.cdn.mozilla.net/fonts/fira.css";
+@import "mixins.scss";
 
 // color palette
 //--------------------------------------------------------------------
@@ -29,8 +30,8 @@ $anim_dur_def: ".5s"; // the default animation duration
 body {
     font-family: "Fira Sans";
     color: $black;
+    @include linear-gradient(to bottom, $light_green 0%, $light_gray 5em, $light_green_alt 100%);
     background-color: $light_gray;
-    background: linear-gradient(to bottom, $light_green 0%, $light_gray 5em, $light_green_alt 100%);
 }
 
 .content {
@@ -39,9 +40,7 @@ body {
     }
 
     a {
-        @each $browser in '-webkit-', '-moz-', '-o-', '-ms-', '' {
-            #{$browser}transition: color #{$anim_dur_def};
-        }
+        @include transition(color, #{$anim_dur_def});
         color: $fabcube_green;
 
         &:hover {
@@ -56,13 +55,11 @@ body {
     }
 }
 
-/* JUMBOTRON
+/* JUMBOTRON AND FOOTER
  *-------------------------------------------------------------------- */
-.jumbotron,
-footer {
+.jumbotron {
     color: $light_gray;
-    background-color: $highlight_blue;
-    background: linear-gradient(to bottom, $highlight_blue_alt 0%, $highlight_blue 20%, $highlight_blue_alt 100%);
+    @include linear-gradient(to bottom, $highlight_blue_alt 0%, $highlight_blue 20%, $highlight_blue_alt 100%);
 
     a,
     a:hover,
@@ -77,6 +74,7 @@ footer {
 }
 
 footer {
+    @extend .jumbotron;
     padding-top: 5em;
     padding-bottom: 5em;
 }
@@ -84,8 +82,8 @@ footer {
 /* NAVBAR
  *-------------------------------------------------------------------- */
 .navbar-default {
-    background-color: $highlight_blue;
-    background: linear-gradient(to top, $highlight_green 0%, $highlight_green 0.3em, $highlight_blue_alt 0.3em, $highlight_blue 20%, $highlight_blue_alt 100%);
+    @include linear-gradient(to top, $highlight_green 0%, $highlight_green 0.3em, $highlight_blue_alt 0.3em, $highlight_blue 20%, $highlight_blue_alt 100%);
+    background-color: $highlight_blue; /* fallback; default fallback would be green */
 
     .navbar-nav li a,
     .navbar-brand,
@@ -98,9 +96,7 @@ footer {
         color: $white !important;
         background-color: transparent;
         font-weight: bold;
-        @each $browser in '-webkit-', '-moz-', '-o-', '-ms-', '' {
-            #{$browser}transition: background #{$anim_dur_def};
-        }
+        @include transition(background, #{$anim_dur_def});
     }
 
     .navbar-nav {
