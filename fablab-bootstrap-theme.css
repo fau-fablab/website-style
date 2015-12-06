@@ -7,8 +7,10 @@
 body {
   font-family: "Fira Sans";
   color: #000000;
-  background-color: #E0E3E3;
-  background: linear-gradient(to bottom, #E4EEC1 0%, #E0E3E3 5em, #F4F7E7 100%); }
+  background-color: #E4EEC1;
+  background: -webkit-linear-gradient(top, #E4EEC1 0%, #E0E3E3 5em, #F4F7E7 100%);
+  background: linear-gradient(to bottom, #E4EEC1 0%, #E0E3E3 5em, #F4F7E7 100%);
+  background-color: #E0E3E3; }
 
 .content hr {
   border-color: #777777; }
@@ -16,7 +18,6 @@ body {
   -webkit-transition: color .5s;
   -moz-transition: color .5s;
   -o-transition: color .5s;
-  -ms-transition: color .5s;
   transition: color .5s;
   color: #209466; }
   .content a:hover {
@@ -26,23 +27,21 @@ body {
     text-decoration-line: none;
     color: #163B64; }
 
-/* JUMBOTRON
+/* JUMBOTRON AND FOOTER
  *-------------------------------------------------------------------- */
-.jumbotron,
-footer {
+.jumbotron, footer {
   color: #E0E3E3;
-  background-color: #2D73A3;
+  background-color: #275F86;
+  background: -webkit-linear-gradient(top, #275F86 0%, #2D73A3 20%, #275F86 100%);
   background: linear-gradient(to bottom, #275F86 0%, #2D73A3 20%, #275F86 100%); }
-  .jumbotron a,
+  .jumbotron a, footer a,
   .jumbotron a:hover,
-  .jumbotron a:visited,
-  footer a,
   footer a:hover,
+  .jumbotron a:visited,
   footer a:visited {
     text-decoration-line: none;
     color: #A7CE38; }
-  .jumbotron img,
-  footer img {
+  .jumbotron img, footer img {
     max-width: 100%; }
 
 footer {
@@ -52,8 +51,11 @@ footer {
 /* NAVBAR
  *-------------------------------------------------------------------- */
 .navbar-default {
+  background-color: #A7CE38;
+  background: -webkit-linear-gradient(bottom, #A7CE38 0%, #A7CE38 0.3em, #275F86 0.3em, #2D73A3 20%, #275F86 100%);
+  background: linear-gradient(to top, #A7CE38 0%, #A7CE38 0.3em, #275F86 0.3em, #2D73A3 20%, #275F86 100%);
   background-color: #2D73A3;
-  background: linear-gradient(to top, #A7CE38 0%, #A7CE38 0.3em, #275F86 0.3em, #2D73A3 20%, #275F86 100%); }
+  /* fallback; default fallback would be green */ }
   .navbar-default .navbar-nav li a,
   .navbar-default .navbar-brand,
   .navbar-default .navbar-brand:hover,
@@ -68,7 +70,6 @@ footer {
     -webkit-transition: background .5s;
     -moz-transition: background .5s;
     -o-transition: background .5s;
-    -ms-transition: background .5s;
     transition: background .5s; }
   .navbar-default .navbar-nav li a:hover {
     color: #ffffff;
