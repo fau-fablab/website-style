@@ -94,7 +94,7 @@ footer {
     .navbar-default .navbar-toggle:hover,
     .navbar-default .navbar-toggle:focus:hover {
       background-color: #A7CE38; }
-  .navbar-default a img {
+  .navbar-default a img.img-thumbnail {
     max-height: 2em;
     margin-top: -0.5em;
     padding: .1em;
