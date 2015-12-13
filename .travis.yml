@@ -8,12 +8,14 @@ after_success:
 - export COMMITMESSAGE="$(git log -1 --pretty=%s)"
 - echo "${COMMITMESSAGE}"
 - cp ./index.html ..
-- cp ./fablab-bootstrap-theme.css ..
+- cp -r ./css/ ..
+- cp -r ./js/ ..
 - cp .travis/deploy_key.enc ..
 - git checkout gh-pages
 - mv ../index.html ./index.html
-- mv ../fablab-bootstrap-theme.css ./fablab-bootstrap-theme.css
-- git add ./index.html ./fablab-bootstrap-theme.css
+  mv ../css/ .
+  mv ../js/ .
+- git add ./index.html ./css/ ./js/
 - git config --global user.name "Travis Auto Build"
 - git config --global user.email "travis@fablab.fau.de"
 - git commit -m "${COMMITMESSAGE}"

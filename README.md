@@ -11,13 +11,17 @@ Usage
 Either add this repo as submodule to your project or add
 
 ```html
-<link rel="stylesheet" href="https://fau-fablab.github.io/website-style/fablab-bootstrap-theme.css" type="text/css" >
+<link rel="stylesheet" href="https://fau-fablab.github.io/website-style/css/faufablab.css" type="text/css" >
+<!-- if you want to use the javascript, also add this: -->
+<script src="https://fau-fablab.github.io/website-style/js/faufablab.js"></script>
 ```
 
 or
 
 ```html
-<link rel="stylesheet" href="https://raw.githubusercontent.com/fau-fablab/website-style/bootstrap/fablab-bootstrap-theme.css" type="text/css" >
+<link rel="stylesheet" href="https://raw.githubusercontent.com/fau-fablab/website-style/bootstrap/css/faufablab.css" type="text/css" >
+<!-- if you want to use the javascript, also add this: -->
+<script src="https://raw.githubusercontent.com/fau-fablab/website-style/bootstrap/js/faufablab.js"></script>
 ```
 
 to your bootstrap site.
@@ -27,7 +31,7 @@ See https://fau-fablab.github.io/website-style/ for a example.
 Contributing
 ------------
 
- - Edit [`fablab-bootstrap-theme.scss`](./fablab-bootstrap-theme.scss)
+ - Edit [`./css/faufablab.scss`](./css/faufablab.scss)
  - Run [`make`](Makefile) to create the `css`
  - See [`index.html`](index.html) for checking your changes
 

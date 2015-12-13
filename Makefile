@@ -1,7 +1,9 @@
-.PHONY: clean
+SUBDIRS	= css
 
-fablab-bootstrap-theme.css: fablab-bootstrap-theme.scss mixins.scss
-	sass $< $@
+.PHONY: all clean
+
+all:
+	cd css && $(MAKE) $@
 
 clean:
-	rm -f fablab-bootstrap-theme.css *.map
+	cd css && $(MAKE) $@
