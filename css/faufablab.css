@@ -1,0 +1,114 @@
+/*                     FAU FabLab Bootstrap Theme
+ * --------------------------------------------------------------------
+ * https://github.com/fau-fablab/website-style    License: CC BY-SA 4.0 */
+@import "https://code.cdn.mozilla.net/fonts/fira.css";
+/* GLOBAL STYLES
+ *-------------------------------------------------------------------- */
+body {
+  font-family: "Fira Sans";
+  color: #000000;
+  background-color: #E4EEC1;
+  background: -webkit-linear-gradient(top, #E4EEC1 0%, #E0E3E3 5em, #F4F7E7 100%);
+  background: linear-gradient(to bottom, #E4EEC1 0%, #E0E3E3 5em, #F4F7E7 100%);
+  background-color: #E0E3E3; }
+
+.content hr {
+  border-color: #777777; }
+.content a:not(.btn) {
+  -webkit-transition: color .5s;
+  -moz-transition: color .5s;
+  -o-transition: color .5s;
+  transition: color .5s;
+  color: #209466; }
+  .content a:not(.btn):hover {
+    text-decoration-line: none;
+    color: #C42028; }
+  .content a:not(.btn):visited {
+    text-decoration-line: none;
+    color: #163B64; }
+
+/* JUMBOTRON AND FOOTER
+ *-------------------------------------------------------------------- */
+.jumbotron, footer {
+  color: #E0E3E3;
+  background-color: #275F86;
+  background: -webkit-linear-gradient(top, #275F86 0%, #2D73A3 20%, #275F86 100%);
+  background: linear-gradient(to bottom, #275F86 0%, #2D73A3 20%, #275F86 100%); }
+  .jumbotron a:not(.btn), footer a:not(.btn),
+  .jumbotron a:not(.btn):hover,
+  footer a:not(.btn):hover,
+  .jumbotron a:not(.btn):visited,
+  footer a:not(.btn):visited {
+    text-decoration-line: none;
+    color: #A7CE38; }
+  .jumbotron img, footer img {
+    max-width: 100%; }
+  .jumbotron h1, footer h1 {
+    text-shadow: rgba(224, 227, 227, 0.2) 0 1px 0; }
+  .jumbotron h2, footer h2 {
+    text-shadow: rgba(224, 227, 227, 0.2) 0 1px 0; }
+  .jumbotron h3, footer h3 {
+    text-shadow: rgba(224, 227, 227, 0.2) 0 1px 0; }
+  .jumbotron.intro, footer.intro {
+    margin-bottom: 0px; }
+
+footer {
+  padding-top: 5em;
+  padding-bottom: 5em; }
+
+/* NAVBAR
+ *-------------------------------------------------------------------- */
+.navbar-default {
+  background-color: #A7CE38;
+  background: -webkit-linear-gradient(bottom, #A7CE38 0%, #A7CE38 0.3em, #275F86 0.3em, #2D73A3 20%, #275F86 100%);
+  background: linear-gradient(to top, #A7CE38 0%, #A7CE38 0.3em, #275F86 0.3em, #2D73A3 20%, #275F86 100%);
+  background-color: #2D73A3;
+  /* fallback; default fallback would be green */
+  border-radius: 0px !important;
+  border: 0px; }
+  .navbar-default .navbar-nav li a,
+  .navbar-default .navbar-brand,
+  .navbar-default .navbar-brand:hover,
+  .navbar-default .navbar-brand:focus,
+  .navbar-default .navbar-toggle,
+  .navbar-default .dropdown .dropdown-toggle,
+  .navbar-default .dropdown .dropdown-toggle:focus,
+  .navbar-default .dropdown-menu li a {
+    color: #ffffff !important;
+    background-color: transparent;
+    font-weight: bold;
+    -webkit-transition: background .5s;
+    -moz-transition: background .5s;
+    -o-transition: background .5s;
+    transition: background .5s; }
+  .navbar-default .navbar-nav li a:hover {
+    color: #ffffff;
+    background-color: #A7CE38 !important; }
+  .navbar-default .navbar-nav .dropdown .dropdown-menu {
+    color: #ffffff;
+    background-color: #2D73A3; }
+  .navbar-default .navbar-nav .active a:hover,
+  .navbar-default .navbar-nav .active a,
+  .navbar-default .navbar-nav .dropdown.open .dropdown-toggle {
+    color: #275F86 !important;
+    background-color: #A7CE38; }
+  .navbar-default .navbar-collapse,
+  .navbar-default .navbar-form {
+    border-color: transparent; }
+  .navbar-default .navbar-toggle,
+  .navbar-default .navbar-toggle:focus {
+    background-color: transparent;
+    border-color: transparent; }
+    .navbar-default .navbar-toggle .icon-bar,
+    .navbar-default .navbar-toggle:focus .icon-bar {
+      background-color: #ffffff; }
+    .navbar-default .navbar-toggle:hover,
+    .navbar-default .navbar-toggle:focus:hover {
+      background-color: #A7CE38; }
+  .navbar-default a img.img-thumbnail {
+    max-height: 2em;
+    margin-top: -0.5em;
+    padding: .1em;
+    background-color: #E0E3E3; }
+
+/*# sourceMappingURL=faufablab.css.map */

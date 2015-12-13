@@ -1,0 +1,160 @@
+/*                     FAU FabLab Bootstrap Theme
+ * --------------------------------------------------------------------
+ * https://github.com/fau-fablab/website-style    License: CC BY-SA 4.0 */
+
+@import "https://code.cdn.mozilla.net/fonts/fira.css";
+@import "mixins.scss";
+
+// color palette
+//--------------------------------------------------------------------
+$fabcube_green:         #209466;
+$fabcube_blue:          #163B64;
+$fabcube_red:           #C42028;
+$highlight_blue:        #2D73A3;
+$highlight_blue_alt:    #275F86;
+$highlight_green:       #A7CE38;
+$highlight_green_alt:   #90B12F;
+$light_green:           #E4EEC1;
+$light_green_alt:       #F4F7E7;
+$dark_gray:             #777777;
+$light_gray:            #E0E3E3;
+$white:                 #ffffff;
+$black:                 #000000;
+
+// other vars
+$anim_dur_def: ".5s"; // the default animation duration
+
+/* GLOBAL STYLES
+ *-------------------------------------------------------------------- */
+
+body {
+    font-family: "Fira Sans";
+    color: $black;
+    @include linear-gradient(to bottom, $light_green 0%, $light_gray 5em, $light_green_alt 100%);
+    background-color: $light_gray;
+}
+
+.content {
+    hr {
+        border-color: $dark_gray;
+    }
+
+    a:not(.btn) {
+        @include transition(color, #{$anim_dur_def});
+        color: $fabcube_green;
+
+        &:hover {
+            text-decoration-line: none;
+            color: $fabcube_red;
+        }
+
+        &:visited {
+            text-decoration-line: none;
+            color: $fabcube_blue;
+        }
+    }
+}
+
+/* JUMBOTRON AND FOOTER
+ *-------------------------------------------------------------------- */
+.jumbotron {
+    color: $light_gray;
+    @include linear-gradient(to bottom, $highlight_blue_alt 0%, $highlight_blue 20%, $highlight_blue_alt 100%);
+
+    a:not(.btn),
+    a:not(.btn):hover,
+    a:not(.btn):visited {
+        text-decoration-line: none;
+        color: $highlight_green;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    @each $header in (h1, h2, h3) {
+        #{$header} {
+            text-shadow: rgba($light_gray,.2) 0 1px 0;
+        }
+    }
+
+    &.intro {
+        margin-bottom: 0px;
+    }
+}
+
+footer {
+    @extend .jumbotron;
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+/* NAVBAR
+ *-------------------------------------------------------------------- */
+.navbar-default {
+    @include linear-gradient(to top, $highlight_green 0%, $highlight_green 0.3em, $highlight_blue_alt 0.3em, $highlight_blue 20%, $highlight_blue_alt 100%);
+    background-color: $highlight_blue; /* fallback; default fallback would be green */
+    border-radius: 0px !important;
+    border: 0px;
+
+    .navbar-nav li a,
+    .navbar-brand,
+    .navbar-brand:hover,
+    .navbar-brand:focus,
+    .navbar-toggle,
+    .dropdown .dropdown-toggle,
+    .dropdown .dropdown-toggle:focus,
+    .dropdown-menu li a {
+        color: $white !important;
+        background-color: transparent;
+        font-weight: bold;
+        @include transition(background, #{$anim_dur_def});
+    }
+
+    .navbar-nav {
+        li a:hover {
+            color: $white;
+            background-color: $highlight_green !important;
+        }
+
+        .dropdown .dropdown-menu {
+            color: $white;
+            background-color: $highlight_blue;
+        }
+
+        .active a:hover,
+        .active a,
+        .dropdown.open .dropdown-toggle {
+            color: $highlight_blue_alt !important;
+            background-color: $highlight_green;
+        }
+    }
+
+    .navbar-collapse,
+    .navbar-form {
+        border-color: transparent;
+    }
+
+    .navbar-toggle,
+    .navbar-toggle:focus {
+        background-color: transparent;
+        border-color: transparent;
+
+        .icon-bar {
+            background-color: $white;
+        }
+
+        &:hover {
+            background-color: $highlight_green;
+        }
+    }
+
+    a img.img-thumbnail {
+        max-height: 2em;
+        margin-top: -0.5em;
+        padding: .1em;
+        background-color: $light_gray;
+    }
+}
+
+// vim: ts=4 et
