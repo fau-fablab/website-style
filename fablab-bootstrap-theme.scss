@@ -39,7 +39,7 @@ body {
         border-color: $dark_gray;
     }
 
-    a {
+    a:not(.btn) {
         @include transition(color, #{$anim_dur_def});
         color: $fabcube_green;
 
@@ -61,15 +61,25 @@ body {
     color: $light_gray;
     @include linear-gradient(to bottom, $highlight_blue_alt 0%, $highlight_blue 20%, $highlight_blue_alt 100%);
 
-    a,
-    a:hover,
-    a:visited {
+    a:not(.btn),
+    a:not(.btn):hover,
+    a:not(.btn):visited {
         text-decoration-line: none;
         color: $highlight_green;
     }
 
     img {
         max-width: 100%;
+    }
+
+    @each $header in (h1, h2, h3) {
+        #{$header} {
+            text-shadow: rgba($light_gray,.2) 0 1px 0;
+        }
+    }
+
+    &.intro {
+        margin-bottom: 0px;
     }
 }
 
@@ -84,6 +94,8 @@ footer {
 .navbar-default {
     @include linear-gradient(to top, $highlight_green 0%, $highlight_green 0.3em, $highlight_blue_alt 0.3em, $highlight_blue 20%, $highlight_blue_alt 100%);
     background-color: $highlight_blue; /* fallback; default fallback would be green */
+    border-radius: 0px !important;
+    border: 0px;
 
     .navbar-nav li a,
     .navbar-brand,

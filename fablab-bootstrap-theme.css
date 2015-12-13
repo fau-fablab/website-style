@@ -14,16 +14,16 @@ body {
 
 .content hr {
   border-color: #777777; }
-.content a {
+.content a:not(.btn) {
   -webkit-transition: color .5s;
   -moz-transition: color .5s;
   -o-transition: color .5s;
   transition: color .5s;
   color: #209466; }
-  .content a:hover {
+  .content a:not(.btn):hover {
     text-decoration-line: none;
     color: #C42028; }
-  .content a:visited {
+  .content a:not(.btn):visited {
     text-decoration-line: none;
     color: #163B64; }
 
@@ -34,15 +34,23 @@ body {
   background-color: #275F86;
   background: -webkit-linear-gradient(top, #275F86 0%, #2D73A3 20%, #275F86 100%);
   background: linear-gradient(to bottom, #275F86 0%, #2D73A3 20%, #275F86 100%); }
-  .jumbotron a, footer a,
-  .jumbotron a:hover,
-  footer a:hover,
-  .jumbotron a:visited,
-  footer a:visited {
+  .jumbotron a:not(.btn), footer a:not(.btn),
+  .jumbotron a:not(.btn):hover,
+  footer a:not(.btn):hover,
+  .jumbotron a:not(.btn):visited,
+  footer a:not(.btn):visited {
     text-decoration-line: none;
     color: #A7CE38; }
   .jumbotron img, footer img {
     max-width: 100%; }
+  .jumbotron h1, footer h1 {
+    text-shadow: rgba(224, 227, 227, 0.2) 0 1px 0; }
+  .jumbotron h2, footer h2 {
+    text-shadow: rgba(224, 227, 227, 0.2) 0 1px 0; }
+  .jumbotron h3, footer h3 {
+    text-shadow: rgba(224, 227, 227, 0.2) 0 1px 0; }
+  .jumbotron.intro, footer.intro {
+    margin-bottom: 0px; }
 
 footer {
   padding-top: 5em;
@@ -55,7 +63,9 @@ footer {
   background: -webkit-linear-gradient(bottom, #A7CE38 0%, #A7CE38 0.3em, #275F86 0.3em, #2D73A3 20%, #275F86 100%);
   background: linear-gradient(to top, #A7CE38 0%, #A7CE38 0.3em, #275F86 0.3em, #2D73A3 20%, #275F86 100%);
   background-color: #2D73A3;
-  /* fallback; default fallback would be green */ }
+  /* fallback; default fallback would be green */
+  border-radius: 0px !important;
+  border: 0px; }
   .navbar-default .navbar-nav li a,
   .navbar-default .navbar-brand,
   .navbar-default .navbar-brand:hover,
