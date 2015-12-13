@@ -11,10 +11,12 @@ after_success:
 - cp -r ./css/ ..
 - cp -r ./js/ ..
 - cp .travis/deploy_key.enc ..
+- git fetch origin gh-pages:gh-pages
 - git checkout gh-pages
+- rm -rf index.html css js
 - mv ../index.html ./index.html
-  mv ../css/ .
-  mv ../js/ .
+- mv ../css/ .
+- mv ../js/ .
 - git add ./index.html ./css/ ./js/
 - git config --global user.name "Travis Auto Build"
 - git config --global user.email "travis@fablab.fau.de"
