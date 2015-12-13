@@ -16,14 +16,6 @@ Either add this repo as submodule to your project or add
 <script src="https://fau-fablab.github.io/website-style/js/faufablab.js"></script>
 ```
 
-or
-
-```html
-<link rel="stylesheet" href="https://raw.githubusercontent.com/fau-fablab/website-style/bootstrap/css/faufablab.css" type="text/css" >
-<!-- if you want to use the javascript, also add this: -->
-<script src="https://raw.githubusercontent.com/fau-fablab/website-style/bootstrap/js/faufablab.js"></script>
-```
-
 to your bootstrap site.
 
 See https://fau-fablab.github.io/website-style/ for a example.
