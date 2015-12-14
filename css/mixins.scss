@@ -73,3 +73,7 @@
 		#{$browser}transition: #{$property} #{$duration};
 	}
 }
+
+@mixin emboss($color) {
+	text-shadow: rgba($color,.2) 0 1px 0;
+}
