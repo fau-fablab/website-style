@@ -41,7 +41,7 @@ body {
     }
 
     a:not(.btn) {
-        @include transition(color, #{$anim_dur_def});
+        @include transition(#{$anim_dur_def}, color);
         color: $fabcube_green;
 
         &:hover {
@@ -72,7 +72,7 @@ body {
     color: $white;
     background-color: transparent;
     font-weight: bold;
-    @include transition(background, #{$anim_dur_def});
+    @include transition(#{$anim_dur_def}, background);
 }
 %nav_element_hover {
     color: $white;
@@ -181,6 +181,10 @@ nav.navbar.navbar-inverse {
         padding: .1em;
         background-color: $light_gray;
     }
+
+    .navbar-text {
+        color: $light_gray;
+    }
 }
 
 nav.well {
@@ -202,6 +206,24 @@ nav.well {
     p {
         @include emboss($dark_gray);
         border-bottom: $line_width solid $highlight_green;
+    }
+}
+
+/* CUSTOM ELEMENTS
+ *-------------------------------------------------------------------- */
+
+.fade-down {
+    .fade-down-item-animate {
+        @include transition(#{$anim_dur_def}, opacity, line-height);
+        line-height: 0px;
+        opacity: 0;
+    }
+
+    &:hover {
+        .fade-down-item-animate {
+            line-height: 140%; //?
+            opacity: 1;
+        }
     }
 }
 
