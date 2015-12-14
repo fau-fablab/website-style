@@ -109,7 +109,7 @@ body {
 
 footer,
 .footer {
-    @extend %blue_background;
+    @extend .jumbotron;
     padding-top: 5em;
     padding-bottom: 5em;
 }
