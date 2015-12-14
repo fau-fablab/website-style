@@ -54,14 +54,18 @@ body {
             color: $fabcube_blue;
         }
     }
+
+    img, video {
+        max-width: 100%;
+    }
 }
 
 /* TEMPLATES
  *-------------------------------------------------------------------- */
 
-%blue_background {
+@mixin blue_background($direction) {
     color: $light_gray;
-    @include linear-gradient(to bottom, $highlight_blue_alt 0%, $highlight_blue 20%, $highlight_blue_alt 100%);
+    @include linear-gradient($direction, $highlight_blue_alt 0%, $highlight_blue 20%, $highlight_blue_alt 100%);
 }
 
 %nav_element {
@@ -83,17 +87,13 @@ body {
  *-------------------------------------------------------------------- */
 
 .jumbotron {
-    @extend %blue_background;
+    @include blue_background(to bottom);
 
     a:not(.btn),
     a:not(.btn):hover,
     a:not(.btn):visited {
         text-decoration-line: none;
         color: $highlight_green;
-    }
-
-    img {
-        max-width: 100%;
     }
 
     @each $header in (h1, h2, h3) {
@@ -117,16 +117,15 @@ footer,
 /* NAVS
  *-------------------------------------------------------------------- */
 nav.navbar.navbar-inverse {
-    @include linear-gradient(to top, $highlight_green 0%, $highlight_green $line_width, $highlight_blue_alt $line_width, $highlight_blue 20%, $highlight_blue_alt 100%);
-    background-color: $highlight_blue; /* fallback; default fallback would be green */
-    border-radius: 0px;
-    border: 0px;
+    @include blue_background(to top);
+    border-bottom: $line_width solid $highlight_green;
 
     .navbar-nav li a,
     .navbar-brand,
     .navbar-brand:hover,
     .navbar-brand:focus,
     .navbar-toggle,
+    .navbar-nav .open .dropdown-menu li a,
     .dropdown .dropdown-toggle,
     .dropdown .dropdown-toggle:focus,
     .dropdown-menu li a {
@@ -137,6 +136,8 @@ nav.navbar.navbar-inverse {
     .navbar-nav li a:focus,
     .dropdown-menu li a:hover,
     .dropdown-menu li a:focus,
+    .navbar-nav .open .dropdown-menu li a:hover,
+    .navbar-nav .open .dropdown-menu li a:focus,
     .dropdown .dropdown-toggle:hover {
         @extend %nav_element_hover;
     }
@@ -174,15 +175,16 @@ nav.navbar.navbar-inverse {
     }
 
     a img.img-thumbnail {
-        max-height: 2em;
-        margin-top: -0.5em;
+        max-height: 2.5em;
+        margin-top: -0.75em;
+        margin-bottom: -0.75em;
         padding: .1em;
         background-color: $light_gray;
     }
 }
 
 nav.well {
-    @extend %blue_background;
+    @include blue_background(to bottom);
     font-weight: bold;
     z-index: 100;
 

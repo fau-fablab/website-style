@@ -26,21 +26,17 @@ body {
   .content a:not(.btn):visited {
     text-decoration-line: none;
     color: #163B64; }
+.content img, .content video {
+  max-width: 100%; }
 
 /* TEMPLATES
  *-------------------------------------------------------------------- */
-.jumbotron, footer,
-.footer, nav.well {
-  color: #E0E3E3;
-  background-color: #275F86;
-  background: -webkit-linear-gradient(top, #275F86 0%, #2D73A3 20%, #275F86 100%);
-  background: linear-gradient(to bottom, #275F86 0%, #2D73A3 20%, #275F86 100%); }
-
 nav.navbar.navbar-inverse .navbar-nav li a,
 nav.navbar.navbar-inverse .navbar-brand,
 nav.navbar.navbar-inverse .navbar-brand:hover,
 nav.navbar.navbar-inverse .navbar-brand:focus,
 nav.navbar.navbar-inverse .navbar-toggle,
+nav.navbar.navbar-inverse .navbar-nav .open .dropdown-menu li a,
 nav.navbar.navbar-inverse .dropdown .dropdown-toggle,
 nav.navbar.navbar-inverse .dropdown .dropdown-toggle:focus,
 nav.navbar.navbar-inverse .dropdown-menu li a, nav.well a {
@@ -56,6 +52,8 @@ nav.navbar.navbar-inverse .navbar-nav li a:hover,
 nav.navbar.navbar-inverse .navbar-nav li a:focus,
 nav.navbar.navbar-inverse .dropdown-menu li a:hover,
 nav.navbar.navbar-inverse .dropdown-menu li a:focus,
+nav.navbar.navbar-inverse .navbar-nav .open .dropdown-menu li a:hover,
+nav.navbar.navbar-inverse .navbar-nav .open .dropdown-menu li a:focus,
 nav.navbar.navbar-inverse .dropdown .dropdown-toggle:hover, nav.well a:hover {
   color: #ffffff;
   background-color: #A7CE38; }
@@ -69,31 +67,34 @@ nav.well a:focus {
 
 /* JUMBOTRON AND FOOTER
  *-------------------------------------------------------------------- */
-.jumbotron a:not(.btn), footer a:not(.btn),
-.footer a:not(.btn),
-.jumbotron a:not(.btn):hover,
-footer a:not(.btn):hover,
-.footer a:not(.btn):hover,
-.jumbotron a:not(.btn):visited,
-footer a:not(.btn):visited,
-.footer a:not(.btn):visited {
-  text-decoration-line: none;
-  color: #A7CE38; }
-.jumbotron img, footer img,
-.footer img {
-  max-width: 100%; }
-.jumbotron h1, footer h1,
-.footer h1 {
-  text-shadow: rgba(224, 227, 227, 0.2) 0 1px 0; }
-.jumbotron h2, footer h2,
-.footer h2 {
-  text-shadow: rgba(224, 227, 227, 0.2) 0 1px 0; }
-.jumbotron h3, footer h3,
-.footer h3 {
-  text-shadow: rgba(224, 227, 227, 0.2) 0 1px 0; }
-.jumbotron.intro, footer.intro,
-.intro.footer {
-  margin-bottom: 0px; }
+.jumbotron, footer,
+.footer {
+  color: #E0E3E3;
+  background-color: #275F86;
+  background: -webkit-linear-gradient(top, #275F86 0%, #2D73A3 20%, #275F86 100%);
+  background: linear-gradient(to bottom, #275F86 0%, #2D73A3 20%, #275F86 100%); }
+  .jumbotron a:not(.btn), footer a:not(.btn),
+  .footer a:not(.btn),
+  .jumbotron a:not(.btn):hover,
+  footer a:not(.btn):hover,
+  .footer a:not(.btn):hover,
+  .jumbotron a:not(.btn):visited,
+  footer a:not(.btn):visited,
+  .footer a:not(.btn):visited {
+    text-decoration-line: none;
+    color: #A7CE38; }
+  .jumbotron h1, footer h1,
+  .footer h1 {
+    text-shadow: rgba(224, 227, 227, 0.2) 0 1px 0; }
+  .jumbotron h2, footer h2,
+  .footer h2 {
+    text-shadow: rgba(224, 227, 227, 0.2) 0 1px 0; }
+  .jumbotron h3, footer h3,
+  .footer h3 {
+    text-shadow: rgba(224, 227, 227, 0.2) 0 1px 0; }
+  .jumbotron.intro, footer.intro,
+  .intro.footer {
+    margin-bottom: 0px; }
 
 footer,
 .footer {
@@ -103,13 +104,11 @@ footer,
 /* NAVS
  *-------------------------------------------------------------------- */
 nav.navbar.navbar-inverse {
-  background-color: #A7CE38;
-  background: -webkit-linear-gradient(bottom, #A7CE38 0%, #A7CE38 0.3em, #275F86 0.3em, #2D73A3 20%, #275F86 100%);
-  background: linear-gradient(to top, #A7CE38 0%, #A7CE38 0.3em, #275F86 0.3em, #2D73A3 20%, #275F86 100%);
-  background-color: #2D73A3;
-  /* fallback; default fallback would be green */
-  border-radius: 0px;
-  border: 0px; }
+  color: #E0E3E3;
+  background-color: #275F86;
+  background: -webkit-linear-gradient(bottom, #275F86 0%, #2D73A3 20%, #275F86 100%);
+  background: linear-gradient(to top, #275F86 0%, #2D73A3 20%, #275F86 100%);
+  border-bottom: 0.3em solid #A7CE38; }
   nav.navbar.navbar-inverse .navbar-nav .dropdown .dropdown-menu {
     color: #ffffff;
     background-color: #2D73A3; }
@@ -127,12 +126,17 @@ nav.navbar.navbar-inverse {
     nav.navbar.navbar-inverse .navbar-toggle:focus:hover {
       background-color: #A7CE38; }
   nav.navbar.navbar-inverse a img.img-thumbnail {
-    max-height: 2em;
-    margin-top: -0.5em;
+    max-height: 2.5em;
+    margin-top: -0.75em;
+    margin-bottom: -0.75em;
     padding: .1em;
     background-color: #E0E3E3; }
 
 nav.well {
+  color: #E0E3E3;
+  background-color: #275F86;
+  background: -webkit-linear-gradient(top, #275F86 0%, #2D73A3 20%, #275F86 100%);
+  background: linear-gradient(to bottom, #275F86 0%, #2D73A3 20%, #275F86 100%);
   font-weight: bold;
   z-index: 100; }
   nav.well p {
