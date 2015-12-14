@@ -23,6 +23,7 @@ $black:                 #000000;
 
 // other vars
 $anim_dur_def: ".5s"; // the default animation duration
+$line_width: .3em; // the thickness of green lines
 
 /* GLOBAL STYLES
  *-------------------------------------------------------------------- */
@@ -55,11 +56,34 @@ body {
     }
 }
 
-/* JUMBOTRON AND FOOTER
+/* TEMPLATES
  *-------------------------------------------------------------------- */
-.jumbotron {
+
+%blue_background {
     color: $light_gray;
     @include linear-gradient(to bottom, $highlight_blue_alt 0%, $highlight_blue 20%, $highlight_blue_alt 100%);
+}
+
+%nav_element {
+    color: $white;
+    background-color: transparent;
+    font-weight: bold;
+    @include transition(background, #{$anim_dur_def});
+}
+%nav_element_hover {
+    color: $white;
+    background-color: $highlight_green;
+}
+%nav_element_active {
+    color: $highlight_blue_alt;
+    background-color: $highlight_green;
+}
+
+/* JUMBOTRON AND FOOTER
+ *-------------------------------------------------------------------- */
+
+.jumbotron {
+    @extend %blue_background;
 
     a:not(.btn),
     a:not(.btn):hover,
@@ -74,7 +98,7 @@ body {
 
     @each $header in (h1, h2, h3) {
         #{$header} {
-            text-shadow: rgba($light_gray,.2) 0 1px 0;
+            @include emboss($light_gray);
         }
     }
 
@@ -83,18 +107,19 @@ body {
     }
 }
 
-footer {
-    @extend .jumbotron;
+footer,
+.footer {
+    @extend %blue_background;
     padding-top: 5em;
     padding-bottom: 5em;
 }
 
-/* NAVBAR
+/* NAVS
  *-------------------------------------------------------------------- */
-.navbar-default {
-    @include linear-gradient(to top, $highlight_green 0%, $highlight_green 0.3em, $highlight_blue_alt 0.3em, $highlight_blue 20%, $highlight_blue_alt 100%);
+nav.navbar.navbar-inverse {
+    @include linear-gradient(to top, $highlight_green 0%, $highlight_green $line_width, $highlight_blue_alt $line_width, $highlight_blue 20%, $highlight_blue_alt 100%);
     background-color: $highlight_blue; /* fallback; default fallback would be green */
-    border-radius: 0px !important;
+    border-radius: 0px;
     border: 0px;
 
     .navbar-nav li a,
@@ -105,28 +130,26 @@ footer {
     .dropdown .dropdown-toggle,
     .dropdown .dropdown-toggle:focus,
     .dropdown-menu li a {
-        color: $white !important;
-        background-color: transparent;
-        font-weight: bold;
-        @include transition(background, #{$anim_dur_def});
+        @extend %nav_element;
+    }
+
+    .navbar-nav li a:hover,
+    .navbar-nav li a:focus,
+    .dropdown-menu li a:hover,
+    .dropdown-menu li a:focus {
+        @extend %nav_element_hover;
     }
 
     .navbar-nav {
-        li a:hover {
-            color: $white;
-            background-color: $highlight_green !important;
-        }
-
         .dropdown .dropdown-menu {
             color: $white;
             background-color: $highlight_blue;
         }
 
-        .active a:hover,
         .active a,
+        .active a:hover,
         .dropdown.open .dropdown-toggle {
-            color: $highlight_blue_alt !important;
-            background-color: $highlight_green;
+            @extend %nav_element_active;
         }
     }
 
@@ -154,6 +177,28 @@ footer {
         margin-top: -0.5em;
         padding: .1em;
         background-color: $light_gray;
+    }
+}
+
+nav.well {
+    @extend %blue_background;
+    font-weight: bold;
+    z-index: 100;
+
+    a {
+        @extend %nav_element;
+        &:hover {
+            @extend %nav_element_hover;
+        }
+    }
+    .active a,
+    a:focus {
+        @extend %nav_element_active;
+    }
+
+    p {
+        @include emboss($dark_gray);
+        border-bottom: $line_width solid $highlight_green;
     }
 }
 
