@@ -136,7 +136,8 @@ nav.navbar.navbar-inverse {
     .navbar-nav li a:hover,
     .navbar-nav li a:focus,
     .dropdown-menu li a:hover,
-    .dropdown-menu li a:focus {
+    .dropdown-menu li a:focus,
+    .dropdown .dropdown-toggle:hover {
         @extend %nav_element_hover;
     }
 

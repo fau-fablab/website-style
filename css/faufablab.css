@@ -55,7 +55,8 @@ nav.navbar.navbar-inverse .dropdown-menu li a, nav.well a {
 nav.navbar.navbar-inverse .navbar-nav li a:hover,
 nav.navbar.navbar-inverse .navbar-nav li a:focus,
 nav.navbar.navbar-inverse .dropdown-menu li a:hover,
-nav.navbar.navbar-inverse .dropdown-menu li a:focus, nav.well a:hover {
+nav.navbar.navbar-inverse .dropdown-menu li a:focus,
+nav.navbar.navbar-inverse .dropdown .dropdown-toggle:hover, nav.well a:hover {
   color: #ffffff;
   background-color: #A7CE38; }
 
