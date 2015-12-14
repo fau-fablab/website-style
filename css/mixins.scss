@@ -66,11 +66,12 @@
 
 /// Mixin to extend transition to all needed vendor prefixes
 /// @access public
-/// @param {String} $property - the css property for the transition
 /// @param {String} $duration - the duroation of the animation
-@mixin transition($property, $duration) {
+/// @param {Arglist} $properties - the css properties for the transition
+@mixin transition($duration, $properties...) {
 	@each $browser in '-webkit-', '-moz-', '-o-', '' {
-		#{$browser}transition: #{$property} #{$duration};
+		#{$browser}transition-property: #{$properties};
+		#{$browser}transition-duration: #{$duration};
 	}
 }
 
