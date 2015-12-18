@@ -60,6 +60,13 @@ body {
     }
 }
 
+blockquote,
+blockquote.blockquote-reverse {
+    border-color: $highlight_green;
+    border-width: $line-width;
+    font-style: oblique;
+}
+
 /* TEMPLATES
  *-------------------------------------------------------------------- */
 
@@ -107,7 +114,6 @@ body {
     }
 }
 
-footer,
 .footer {
     @extend .jumbotron;
     padding-top: 5em;
