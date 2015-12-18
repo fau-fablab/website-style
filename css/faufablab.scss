@@ -73,6 +73,12 @@ blockquote.blockquote-reverse {
 @mixin blue_background($direction) {
     color: $light_gray;
     @include linear-gradient($direction, $highlight_blue_alt 0%, $highlight_blue 20%, $highlight_blue_alt 100%);
+
+    @each $header in (h1, h2, h3) {
+        #{$header} {
+            text-shadow: rgba($black, .75) -1px 3px 0;
+        }
+    }
 }
 
 %nav_element {
@@ -101,12 +107,6 @@ blockquote.blockquote-reverse {
     a:not(.btn):visited {
         text-decoration-line: none;
         color: $highlight_green;
-    }
-
-    @each $header in (h1, h2, h3) {
-        #{$header} {
-            @include emboss($light_gray);
-        }
     }
 
     &.intro {
@@ -216,7 +216,6 @@ nav.well {
     }
 
     p {
-        @include emboss($dark_gray);
         border-bottom: $line_width solid $highlight_green;
     }
 }

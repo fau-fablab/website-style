@@ -74,10 +74,3 @@
 		#{$browser}transition-duration: #{$duration};
 	}
 }
-
-/// Mixin for inserting an emboss effect
-/// @access public
-/// @param {Color} $color - the color for the embossing shadow (e.g. a gray color)
-@mixin emboss($color) {
-	text-shadow: rgba($color,.2) 0 1px 0;
-}
