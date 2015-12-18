@@ -123,7 +123,7 @@ blockquote.blockquote-reverse {
 /* NAVS
  *-------------------------------------------------------------------- */
 nav.navbar.navbar-inverse {
-    @include blue_background(to top);
+    @include linear-gradient(to right, $highlight_blue_alt 0%, rgba($highlight_blue, .9) 20%, $highlight_blue_alt 100%);
     border-bottom: $line_width solid $highlight_green;
 
     .navbar-nav li a,
@@ -151,7 +151,12 @@ nav.navbar.navbar-inverse {
     .navbar-nav {
         .dropdown .dropdown-menu {
             color: $white;
-            background-color: $highlight_blue;
+            background-color: rgba($highlight_blue, .9);
+
+            .divider {
+                background-color: $highlight_green;
+                height: $line_width;
+            }
         }
 
         .active a,
@@ -181,14 +186,15 @@ nav.navbar.navbar-inverse {
     }
 
     a img.img-thumbnail {
-        max-height: 2.5em;
-        margin-top: -0.75em;
-        margin-bottom: -0.75em;
+        max-height: 2em;
+        margin-top: -0.5em;
+        margin-bottom: -0.5em;
         padding: .1em;
-        background-color: $light_gray;
+        background-color: $white;
     }
 
-    .navbar-text {
+    .navbar-text,
+    .dropdown-header {
         color: $light_gray;
     }
 }
