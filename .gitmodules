@@ -1,0 +1,4 @@
+[submodule "Fira"]
+	path = fonts/Fira
+	url = https://github.com/mozilla/Fira.git
+	branch = master
