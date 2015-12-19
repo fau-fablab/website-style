@@ -3,6 +3,10 @@
 //                  color palette, variables, etc...
 // https://github.com/fau-fablab/website-style    License: CC BY-SA 4.0
 
+/* extra fonts: Fira is the main font and font-awesome is a glyphicon extension */
+@import url("../../fonts/Fira/fira.css");
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css";
+
 // color palette
 //--------------------------------------------------------------------
 $fabcube_green:         #209466;
@@ -26,5 +30,6 @@ $gray-lighter:          lighten($gray-base, 87%);
 // other vars
 $anim_dur_def: ".5s"; // the default animation duration
 $line_width: .3em; // the thickness of green lines
+$footer_heigt: 30em; // the heigt for the sticky footer
 
 // vim: ts=4 et

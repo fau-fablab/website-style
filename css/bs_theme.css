@@ -4,9 +4,13 @@
 // This are explicit rules which can also be done in `bootstrap.scss` for
 // direct compiling in bs. It is required to build an addtitional bs theme.
  * https://github.com/fau-fablab/website-style    License: CC BY-SA 4.0 */
+/* extra fonts: Fira is the main font and font-awesome is a glyphicon extension */
 @import url("../fonts/Fira/fira.css");
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css";
 /* GLOBAL STYLES
  *-------------------------------------------------------------------- */
+@import url("../fonts/Fira/fira.css");
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css";
 html body {
   font-family: "Fira Sans";
   color: #000000;
@@ -46,12 +50,17 @@ nav.navbar.navbar-inverse .navbar-toggle:focus {
 nav.navbar.navbar-inverse .dropdown-header {
   color: #dedede; }
 
+/* extra fonts: Fira is the main font and font-awesome is a glyphicon extension */
 /* GLOBAL STYLES
  *-------------------------------------------------------------------- */
-html body {
-  background-color: #E4EEC1;
-  background: -webkit-linear-gradient(top, #E4EEC1 0%, #dedede 5em, #F4F7E7 100%);
-  background: linear-gradient(to bottom, #E4EEC1 0%, #dedede 5em, #F4F7E7 100%); }
+html {
+  position: relative;
+  min-height: 100%; }
+  html body {
+    background-color: #E4EEC1;
+    background: -webkit-linear-gradient(top, #E4EEC1 0%, #dedede 5em, #F4F7E7 100%);
+    background: linear-gradient(to bottom, #E4EEC1 0%, #dedede 5em, #F4F7E7 100%);
+    margin-bottom: 30em; }
 
 .content hr {
   border-color: #777777; }
@@ -104,30 +113,46 @@ nav.well a:focus {
 
 /* JUMBOTRON AND FOOTER
  *-------------------------------------------------------------------- */
-.jumbotron, .footer {
-  color: #dedede;
+.jumbotron, footer.footer {
+  color: #ffffff;
   background-color: #275F86;
   background: -webkit-linear-gradient(top, #275F86 0%, #2D73A3 20%, #275F86 100%);
   background: linear-gradient(to bottom, #275F86 0%, #2D73A3 20%, #275F86 100%); }
-  .jumbotron h1, .footer h1 {
+  .jumbotron h1, footer.footer h1 {
     text-shadow: rgba(0, 0, 0, 0.75) -1px 3px 0; }
-  .jumbotron h2, .footer h2 {
+  .jumbotron h2, footer.footer h2 {
     text-shadow: rgba(0, 0, 0, 0.75) -1px 3px 0; }
-  .jumbotron h3, .footer h3 {
+  .jumbotron h3, footer.footer h3 {
     text-shadow: rgba(0, 0, 0, 0.75) -1px 3px 0; }
-  .jumbotron a:not(.btn), .footer a:not(.btn),
+  .jumbotron a:not(.btn), footer.footer a:not(.btn),
   .jumbotron a:not(.btn):hover,
-  .footer a:not(.btn):hover,
+  footer.footer a:not(.btn):hover,
   .jumbotron a:not(.btn):visited,
-  .footer a:not(.btn):visited {
+  footer.footer a:not(.btn):visited {
     text-decoration-line: none;
     color: #A7CE38; }
-  .jumbotron.intro, .intro.footer {
+  .jumbotron.intro, footer.intro.footer {
     margin-bottom: 0px; }
 
-.footer {
-  padding-top: 5em;
-  padding-bottom: 5em; }
+footer.footer {
+  position: absolute;
+  height: 30em;
+  width: 100%;
+  bottom: 0px;
+  margin-bottom: 0; }
+  footer.footer a.btn {
+    text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 0;
+    -webkit-transition-property: box-shadow, transform;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-property: box-shadow, transform;
+    -moz-transition-duration: 0.5s;
+    -o-transition-property: box-shadow, transform;
+    -o-transition-duration: 0.5s;
+    transition-property: box-shadow, transform;
+    transition-duration: 0.5s; }
+    footer.footer a.btn:hover {
+      box-shadow: 0px 0px 5px black;
+      transform: scale(1.05); }
 
 /* NAVS
  *-------------------------------------------------------------------- */
@@ -155,7 +180,7 @@ nav.navbar.navbar-inverse {
 /* CUSTOM ELEMENTS
  *-------------------------------------------------------------------- */
 nav.well {
-  color: #dedede;
+  color: #ffffff;
   background-color: #275F86;
   background: -webkit-linear-gradient(top, #275F86 0%, #2D73A3 20%, #275F86 100%);
   background: linear-gradient(to bottom, #275F86 0%, #2D73A3 20%, #275F86 100%);
