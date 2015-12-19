@@ -7,7 +7,7 @@ script: make clean && make
 after_success:
 - export COMMITMESSAGE="$(git log -1 --pretty=%s)"
 - echo "${COMMITMESSAGE}"
-- cp ./index.html ..
+- cp ./*.html ..
 - cp -r ./css/ ..
 - cp -r ./scss/ ..
 - cp -r ./js/ ..
@@ -17,7 +17,7 @@ after_success:
 - git submodule init
 - git submodule update
 - rm -rf index.html css scss js
-- mv ../index.html ./index.html
+- mv ../*.html .
 - mv ../css/ .
 - mv ../scss/ .
 - mv ../js/ .
