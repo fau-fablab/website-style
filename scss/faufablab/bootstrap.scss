@@ -4,7 +4,7 @@
  * https://github.com/fau-fablab/website-style    License: CC BY-SA 4.0 */
 
 @import url("../../fonts/Fira/fira.css");
-@import "base.scss";
+@import "base";
 
 // Overwrite [Bootstraps variables](http://getbootstrap.com/customize/#less-variables)
 //// Font
@@ -74,6 +74,6 @@ $state-danger-bg:   lighten($fabcube_red, 35%);
 @import "../bootstrap-sass/assets/stylesheets/bootstrap";
 
 // overwrite not configurable adjustments
-@import "adjustments.scss"
+@import "adjustments"
 
 // vim: ts=4 et

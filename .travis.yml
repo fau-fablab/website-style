@@ -11,18 +11,17 @@ after_success:
 - mv ./css/ ..
 - mv ./scss/ ..
 - mv ./js/ ..
-- mv ./fonts/ ..
+  #- mv ./fonts/ ..
 - mv .travis/deploy_key.enc ..
 - git fetch origin gh-pages:gh-pages
 - git checkout gh-pages
 - git submodule init
 - git submodule update
-- rm -rf ./css/ ./scss/faufablab/ ./scss/*.scss ./js/ ./fonts/bootstrap/
+- rm -rf ./css/ ./scss/faufablab/ ./js/
 - mv -f ../*.html .
 - mv -f ../css/ .
-- mv -f ../scss/faufablab ../scss/*.scss ./scss/
+- mv -f ../scss/faufablab ./scss/
 - mv -f ../js/ .
-- mv -f ../fonts/bootstrap ./fonts/
 - git add --all ./*.html ./css/ ./scss/ ./js/ fonts/
 - git status
 - git config --global user.name "Travis Auto Build"
