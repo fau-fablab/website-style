@@ -21,7 +21,8 @@ after_success:
 - mv ../css/ .
 - mv ../scss/ .
 - mv ../js/ .
-- git add ./index.html ./css/ ./scss/ ./js/ fonts/
+- git add --all ./*.html ./css/ ./scss/ ./js/ fonts/
+- git status
 - git config --global user.name "Travis Auto Build"
 - git config --global user.email "travis@fablab.fau.de"
 - git commit -m "${COMMITMESSAGE}"
