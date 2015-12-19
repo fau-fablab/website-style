@@ -6,8 +6,8 @@
  * https://github.com/fau-fablab/website-style    License: CC BY-SA 4.0 */
 
 @import url("../../fonts/Fira/fira.css");
-@import "base.scss";
-@import "../mixins.scss";
+@import "base";
+@import "mixins";
 
 /* GLOBAL STYLES
  *-------------------------------------------------------------------- */
@@ -88,6 +88,6 @@ nav.navbar.navbar-inverse {
     }
 }
 
-@import "adjustments.scss";
+@import "adjustments";
 
 // vim: ts=4 et
