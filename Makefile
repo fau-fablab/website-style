@@ -11,6 +11,7 @@ clean:
 	rm -f $(CSS) $(DEST)/*.map
 
 $(DEST)/faufablab_bootstrap.css: $(SRC)/faufablab/bootstrap.scss \
+    $(SRC)/faufablab/base.scss \
     $(SRC)/faufablab/adjustments.scss \
     $(SRC)/bootstrap-sass/assets/stylesheets/_bootstrap.scss \
     fonts/Fira/fira.css
