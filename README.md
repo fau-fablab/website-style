@@ -43,7 +43,9 @@ Contributing
 ```tree
 .
 ├── css                       # the output direcory
-├── fonts ─── Fira            # mozillas fira sans repo
+├── fonts
+│   ├── Fira                  # mozillas fira sans repo
+│   └── bootstrap             # fonts used by bootstrap (it is the content from ./scss/bootstrap-sass/assets/fonts)
 └── scss
     ├── mixins.scss           # useful mixins and functions for sass
     ├── bootstrap-sass        # sass port of twitter bootstrap
