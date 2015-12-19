@@ -3,7 +3,7 @@
  *  A ready-to-use, adapted bootstrap style. No other css is required. 
  * https://github.com/fau-fablab/website-style    License: CC BY-SA 4.0 */
 
-@import "../../fonts/Fira.css";
+@import "../../fonts/Fira/fira.css";
 @import "base.scss";
 
 // Overwrite [Bootstraps variables](http://getbootstrap.com/customize/#less-variables)
@@ -13,18 +13,60 @@ $font-family-sans-serif: "Fira Sans";
 $font-family-monospace: "Fira Mono";
 
 //// Colors
-$gray-base: $black;
+// gray scales are already defined with bootstrap names
+$brand-primary: $fabcube_blue;
+$brand-success: $fabcube_green;
+$brand-info:    $highlight_blue;
+// TODO $brand-warning: $some_yellow;
+$brand-danger:  $fabcube_red;
 
-//// jumbotron
-$jumbotron-color: $light_gray;
-$jumbotron-bg: $highlight_blue_alt;
+//// Scaffolding
+$body-bg: $light_green_alt;
+$text-color: $black;
+
+//// Components
+$component-active-bg: $highlight_green;
+
+//// Tables
+$table-bg-accent: $light_green_alt;
+$table-bg-hover: $highlight_green;
+
+//// Dropdown // TODO separate nav dropdown and other dropdowns
+$dropdown-bg: rgba($highlight_blue, .9);
+$dropdown-link-color: $white;
+$dropdown-link-hover-color: $white;
+$dropdown-link-hover-bg: $highlight_green;
+$dropdown-link-active-color: $highlight_blue;
+$dropdown-link-active-bg: $highlight_green;
+$dropdown-header-color: $gray-lighter;
+$dropdown-divider-bg: $highlight_green;
 
 //// navbar
 $navbar-height: 45px;
-$navbar-inverse-color: $light_gray;
+$navbar-inverse-color: $white;
+$navbar-inverse-link-color: $white;
+$navbar-inverse-link-hover-bg: $highlight_green;
 $navbar-inverse-bg: rgba($highlight_blue, .9);
 $navbar-inverse-link-active-color: $highlight_blue_alt;
 $navbar-inverse-link-active-bg: $highlight_green;
+$navbar-inverse-toggle-hover-bg: $highlight_green;
+$navbar-inverse-toggle-border-color: transparent;
+
+//// thumbnails
+$thumbnail-bg: $white;
+
+//// Wells
+$well-bg: $light_green;
+
+//// jumbotron
+$jumbotron-bg: $highlight_blue_alt;
+$jumbotron-color: $gray-lighter;
+
+//// Form states and alerts
+$state-success-bg:  lighten($fabcube_green, 35%);
+$state-info-bg:     lighten($highlight_blue, 35%);
+// TODO $state-warning-bg: lighten($some_yellow, 35%);
+$state-danger-bg:   lighten($fabcube_red, 35%);
 
 // Import Bootstrap theme
 @import "../bootstrap-sass/assets/stylesheets/bootstrap";

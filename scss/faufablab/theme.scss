@@ -1,0 +1,93 @@
+/*                      FAU FabLab Bootstrap Theme
+ * ----------------------------------------------------------------------
+ *  A theme for bootstrap. Add this output in addition to bootstrap style
+// This are explicit rules which can also be done in `bootstrap.scss` for
+// direct compiling in bs. It is required to build an addtitional bs theme.
+ * https://github.com/fau-fablab/website-style    License: CC BY-SA 4.0 */
+
+@import "../../fonts/Fira/fira.css";
+@import "base.scss";
+@import "../mixins.scss";
+
+/* GLOBAL STYLES
+ *-------------------------------------------------------------------- */
+
+html {
+    body {
+        font-family: "Fira Sans";
+        color: $black;
+        background-color: $light-green_alt;
+    }
+}
+
+/* TEMPLATES
+ *--------------------------------------------------------------------- 
+ * this are additions to the mixins and templates in adjustments
+ */
+
+%nav_element_theme {
+    color: $white;
+    background-color: transparent;
+}
+
+/* NAVS
+ *-------------------------------------------------------------------- */
+nav.navbar.navbar-inverse {
+    .navbar-nav li a,
+    .navbar-brand,
+    .navbar-brand:hover,
+    .navbar-brand:focus,
+    .navbar-toggle,
+    .navbar-nav .open .dropdown-menu li a,
+    .dropdown .dropdown-toggle,
+    .dropdown .dropdown-toggle:focus,
+    .dropdown-menu li a {
+        @extend %nav_element_theme;
+    }
+
+    .navbar-nav li a:hover,
+    .navbar-nav li a:focus,
+    .dropdown-menu li a:hover,
+    .dropdown-menu li a:focus,
+    .navbar-nav .open .dropdown-menu li a:hover,
+    .navbar-nav .open .dropdown-menu li a:focus,
+    .dropdown .dropdown-toggle:hover {
+        @extend %nav_element_hover;
+    }
+
+    .navbar-nav {
+        .dropdown .dropdown-menu {
+            color: $white;
+            background-color: rgba($highlight_blue, .9);
+        }
+
+        .active a,
+        .active a:hover,
+        .dropdown.open .dropdown-toggle {
+            @extend %nav_element_active;
+        }
+    }
+
+    .navbar-collapse,
+    .navbar-form {
+        border-color: transparent;
+    }
+
+    .navbar-toggle,
+    .navbar-toggle:focus {
+        background-color: transparent; // bs bug?
+        border-color: transparent;
+
+        .icon-bar {
+            background-color: $white;
+        }
+    }
+
+    .dropdown-header {
+        color: $gray-lighter;
+    }
+}
+
+@import "adjustments.scss";
+
+// vim: ts=4 et

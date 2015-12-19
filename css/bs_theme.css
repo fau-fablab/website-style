@@ -1,0 +1,191 @@
+/*                      FAU FabLab Bootstrap Theme
+ * ----------------------------------------------------------------------
+ *  A theme for bootstrap. Add this output in addition to bootstrap style
+// This are explicit rules which can also be done in `bootstrap.scss` for
+// direct compiling in bs. It is required to build an addtitional bs theme.
+ * https://github.com/fau-fablab/website-style    License: CC BY-SA 4.0 */
+@import url(../../fonts/Fira/fira.css);
+/* GLOBAL STYLES
+ *-------------------------------------------------------------------- */
+html body {
+  font-family: "Fira Sans";
+  color: #000000;
+  background-color: #F4F7E7; }
+
+/* TEMPLATES
+ *--------------------------------------------------------------------- 
+ * this are additions to the mixins and templates in adjustments
+ */
+nav.navbar.navbar-inverse .navbar-nav li a,
+nav.navbar.navbar-inverse .navbar-brand,
+nav.navbar.navbar-inverse .navbar-brand:hover,
+nav.navbar.navbar-inverse .navbar-brand:focus,
+nav.navbar.navbar-inverse .navbar-toggle,
+nav.navbar.navbar-inverse .navbar-nav .open .dropdown-menu li a,
+nav.navbar.navbar-inverse .dropdown .dropdown-toggle,
+nav.navbar.navbar-inverse .dropdown .dropdown-toggle:focus,
+nav.navbar.navbar-inverse .dropdown-menu li a {
+  color: #ffffff;
+  background-color: transparent; }
+
+/* NAVS
+ *-------------------------------------------------------------------- */
+nav.navbar.navbar-inverse .navbar-nav .dropdown .dropdown-menu {
+  color: #ffffff;
+  background-color: rgba(45, 115, 163, 0.9); }
+nav.navbar.navbar-inverse .navbar-collapse,
+nav.navbar.navbar-inverse .navbar-form {
+  border-color: transparent; }
+nav.navbar.navbar-inverse .navbar-toggle,
+nav.navbar.navbar-inverse .navbar-toggle:focus {
+  background-color: transparent;
+  border-color: transparent; }
+  nav.navbar.navbar-inverse .navbar-toggle .icon-bar,
+  nav.navbar.navbar-inverse .navbar-toggle:focus .icon-bar {
+    background-color: #ffffff; }
+nav.navbar.navbar-inverse .dropdown-header {
+  color: #dedede; }
+
+/* GLOBAL STYLES
+ *-------------------------------------------------------------------- */
+html body {
+  background-color: #E4EEC1;
+  background: -webkit-linear-gradient(top, #E4EEC1 0%, #dedede 5em, #F4F7E7 100%);
+  background: linear-gradient(to bottom, #E4EEC1 0%, #dedede 5em, #F4F7E7 100%); }
+
+.content hr {
+  border-color: #777777; }
+.content img, .content video {
+  max-width: 100%; }
+
+blockquote,
+blockquote.blockquote-reverse {
+  border-color: #A7CE38;
+  border-width: 0.3em;
+  font-style: oblique; }
+
+/* TEMPLATES
+ *-------------------------------------------------------------------- */
+nav.navbar.navbar-inverse .navbar-nav li a,
+nav.navbar.navbar-inverse .navbar-brand,
+nav.navbar.navbar-inverse .navbar-brand:hover,
+nav.navbar.navbar-inverse .navbar-brand:focus,
+nav.navbar.navbar-inverse .navbar-toggle,
+nav.navbar.navbar-inverse .navbar-nav .open .dropdown-menu li a,
+nav.navbar.navbar-inverse .dropdown .dropdown-toggle,
+nav.navbar.navbar-inverse .dropdown .dropdown-toggle:focus,
+nav.navbar.navbar-inverse .dropdown-menu li a, nav.well a {
+  font-weight: bold;
+  -webkit-transition-property: background;
+  -webkit-transition-duration: .5s;
+  -moz-transition-property: background;
+  -moz-transition-duration: .5s;
+  -o-transition-property: background;
+  -o-transition-duration: .5s;
+  transition-property: background;
+  transition-duration: .5s; }
+
+nav.navbar.navbar-inverse .navbar-nav li a:hover,
+nav.navbar.navbar-inverse .navbar-nav li a:focus,
+nav.navbar.navbar-inverse .dropdown-menu li a:hover,
+nav.navbar.navbar-inverse .dropdown-menu li a:focus,
+nav.navbar.navbar-inverse .navbar-nav .open .dropdown-menu li a:hover,
+nav.navbar.navbar-inverse .navbar-nav .open .dropdown-menu li a:focus,
+nav.navbar.navbar-inverse .dropdown .dropdown-toggle:hover, nav.well a:hover {
+  color: #ffffff;
+  background-color: #A7CE38; }
+
+nav.navbar.navbar-inverse .navbar-nav .active a,
+nav.navbar.navbar-inverse .navbar-nav .active a:hover,
+nav.navbar.navbar-inverse .navbar-nav .dropdown.open .dropdown-toggle, nav.well .active a,
+nav.well a:focus {
+  color: #275F86;
+  background-color: #A7CE38; }
+
+/* JUMBOTRON AND FOOTER
+ *-------------------------------------------------------------------- */
+.jumbotron, .footer {
+  color: #dedede;
+  background-color: #275F86;
+  background: -webkit-linear-gradient(top, #275F86 0%, #2D73A3 20%, #275F86 100%);
+  background: linear-gradient(to bottom, #275F86 0%, #2D73A3 20%, #275F86 100%); }
+  .jumbotron h1, .footer h1 {
+    text-shadow: rgba(0, 0, 0, 0.75) -1px 3px 0; }
+  .jumbotron h2, .footer h2 {
+    text-shadow: rgba(0, 0, 0, 0.75) -1px 3px 0; }
+  .jumbotron h3, .footer h3 {
+    text-shadow: rgba(0, 0, 0, 0.75) -1px 3px 0; }
+  .jumbotron a:not(.btn), .footer a:not(.btn),
+  .jumbotron a:not(.btn):hover,
+  .footer a:not(.btn):hover,
+  .jumbotron a:not(.btn):visited,
+  .footer a:not(.btn):visited {
+    text-decoration-line: none;
+    color: #A7CE38; }
+  .jumbotron.intro, .intro.footer {
+    margin-bottom: 0px; }
+
+.footer {
+  padding-top: 5em;
+  padding-bottom: 5em; }
+
+/* NAVS
+ *-------------------------------------------------------------------- */
+nav.navbar.navbar-inverse {
+  background-color: #275F86;
+  background: -webkit-linear-gradient(left, #275F86 0%, rgba(45, 115, 163, 0.9) 20%, #275F86 100%);
+  background: linear-gradient(to right, #275F86 0%, rgba(45, 115, 163, 0.9) 20%, #275F86 100%);
+  border-bottom: 0.3em solid #A7CE38; }
+  nav.navbar.navbar-inverse .navbar-nav .dropdown .dropdown-menu .divider {
+    background-color: #A7CE38;
+    height: 0.3em; }
+  nav.navbar.navbar-inverse .navbar-toggle:focus {
+    background-color: transparent; }
+    nav.navbar.navbar-inverse .navbar-toggle:focus:hover {
+      background-color: #A7CE38; }
+  nav.navbar.navbar-inverse a img.img-thumbnail {
+    max-height: 2em;
+    margin-top: -0.5em;
+    margin-bottom: -0.5em;
+    padding: .1em;
+    background-color: #ffffff; }
+  nav.navbar.navbar-inverse .navbar-text {
+    color: #dedede; }
+
+/* CUSTOM ELEMENTS
+ *-------------------------------------------------------------------- */
+nav.well {
+  color: #dedede;
+  background-color: #275F86;
+  background: -webkit-linear-gradient(top, #275F86 0%, #2D73A3 20%, #275F86 100%);
+  background: linear-gradient(to bottom, #275F86 0%, #2D73A3 20%, #275F86 100%);
+  font-weight: bold;
+  z-index: 100; }
+  nav.well h1 {
+    text-shadow: rgba(0, 0, 0, 0.75) -1px 3px 0; }
+  nav.well h2 {
+    text-shadow: rgba(0, 0, 0, 0.75) -1px 3px 0; }
+  nav.well h3 {
+    text-shadow: rgba(0, 0, 0, 0.75) -1px 3px 0; }
+  nav.well a {
+    color: #ffffff; }
+  nav.well p {
+    border-bottom: 0.3em solid #A7CE38; }
+
+.fade-down .fade-down-item-animate {
+  -webkit-transition-property: opacity, line-height;
+  -webkit-transition-duration: .5s;
+  -moz-transition-property: opacity, line-height;
+  -moz-transition-duration: .5s;
+  -o-transition-property: opacity, line-height;
+  -o-transition-duration: .5s;
+  transition-property: opacity, line-height;
+  transition-duration: .5s;
+  line-height: 0px;
+  opacity: 0; }
+.fade-down:hover .fade-down-item-animate {
+  /* navigation bar user name */
+  line-height: 140%;
+  opacity: 1; }
+
+/*# sourceMappingURL=bs_theme.css.map */

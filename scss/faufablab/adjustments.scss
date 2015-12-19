@@ -1,42 +1,43 @@
-/*                     FAU FabLab Bootstrap Theme
- * --------------------------------------------------------------------
- *               Unconfigurable adjustments for bootstrap.
- * https://github.com/fau-fablab/website-style    License: CC BY-SA 4.0 */
+//                     FAU FabLab Bootstrap Theme
+// --------------------------------------------------------------------
+//               Unconfigurable adjustments for bootstrap.
+// Before adding rules to this file, double check if you can't add them
+// in `bootstrap.scss` as variable for bs. If so, add also an explicit
+// rule to `theme.scss`.
+// https://github.com/fau-fablab/website-style    License: CC BY-SA 4.0
 
+@import "base.scss";
 @import "../mixins.scss";
 
 /* GLOBAL STYLES
  *-------------------------------------------------------------------- */
 
 html {
-//  font-family: "Fira Sans";
-    color: $black;
-
     body {
-        @include linear-gradient(to bottom, $light_green 0%, $light_gray 5em, $light_green_alt 100%);
-        background-color: $light_gray;
+        @include linear-gradient(to bottom, $light_green 0%, $gray-lighter 5em, $light_green_alt 100%);
     }
 }
 
 .content {
     hr {
-        border-color: $dark_gray;
+        border-color: $gray-light;
     }
 
-    a:not(.btn) {
-        @include transition(#{$anim_dur_def}, color);
-        color: $fabcube_green;
-
-        &:hover {
-            text-decoration-line: none;
-            color: $fabcube_red;
-        }
-
-        &:visited {
-            text-decoration-line: none;
-            color: $fabcube_blue;
-        }
-    }
+// disabled, because this doesn't really work
+//    a:not(.btn) {
+//        @include transition(#{$anim_dur_def}, color);
+//        color: $fabcube_green;
+//
+//        &:hover {
+//            text-decoration-line: none;
+//            color: $fabcube_red;
+//        }
+//
+//        &:visited {
+//            text-decoration-line: none;
+//            color: $fabcube_blue;
+//        }
+//    }
 
     img, video {
         max-width: 100%;
@@ -54,7 +55,7 @@ blockquote.blockquote-reverse {
  *-------------------------------------------------------------------- */
 
 @mixin blue_background($direction) {
-    color: $light_gray;
+    color: $gray-lighter;
     @include linear-gradient($direction, $highlight_blue_alt 0%, $highlight_blue 20%, $highlight_blue_alt 100%);
 
     @each $header in (h1, h2, h3) {
@@ -65,8 +66,6 @@ blockquote.blockquote-reverse {
 }
 
 %nav_element {
-    color: $white;
-    background-color: transparent;
     font-weight: bold;
     @include transition(#{$anim_dur_def}, background);
 }
@@ -121,47 +120,17 @@ nav.navbar.navbar-inverse {
         @extend %nav_element;
     }
 
-    .navbar-nav li a:hover,
-    .navbar-nav li a:focus,
-    .dropdown-menu li a:hover,
-    .dropdown-menu li a:focus,
-    .navbar-nav .open .dropdown-menu li a:hover,
-    .navbar-nav .open .dropdown-menu li a:focus,
-    .dropdown .dropdown-toggle:hover {
-        @extend %nav_element_hover;
-    }
-
     .navbar-nav {
         .dropdown .dropdown-menu {
-            color: $white;
-            background-color: rgba($highlight_blue, .9);
-
             .divider {
                 background-color: $highlight_green;
                 height: $line_width;
             }
         }
-
-        .active a,
-        .active a:hover,
-        .dropdown.open .dropdown-toggle {
-            @extend %nav_element_active;
-        }
     }
 
-    .navbar-collapse,
-    .navbar-form {
-        border-color: transparent;
-    }
-
-    .navbar-toggle,
     .navbar-toggle:focus {
-        background-color: transparent;
-        border-color: transparent;
-
-        .icon-bar {
-            background-color: $white;
-        }
+        background-color: transparent; // bs bug?
 
         &:hover {
             background-color: $highlight_green;
@@ -176,11 +145,14 @@ nav.navbar.navbar-inverse {
         background-color: $white;
     }
 
-    .navbar-text,
-    .dropdown-header {
-        color: $light_gray;
+//  .dropdown-header,
+    .navbar-text {
+        color: $gray-lighter;
     }
 }
+
+/* CUSTOM ELEMENTS
+ *-------------------------------------------------------------------- */
 
 nav.well {
     @include blue_background(to bottom);
@@ -189,6 +161,7 @@ nav.well {
 
     a {
         @extend %nav_element;
+        color: $white;
         &:hover {
             @extend %nav_element_hover;
         }
@@ -203,9 +176,6 @@ nav.well {
     }
 }
 
-/* CUSTOM ELEMENTS
- *-------------------------------------------------------------------- */
-
 .fade-down {
     .fade-down-item-animate {
         @include transition(#{$anim_dur_def}, opacity, line-height);
@@ -215,6 +185,7 @@ nav.well {
 
     &:hover {
         .fade-down-item-animate {
+            /* navigation bar user name */
             line-height: 140%; //?
             opacity: 1;
         }
