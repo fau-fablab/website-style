@@ -7,19 +7,24 @@ script: make clean && make
 after_success:
 - export COMMITMESSAGE="$(git log -1 --pretty=%s)"
 - echo "${COMMITMESSAGE}"
-- cp ./index.html ..
-- cp -r ./css/ ..
-- cp -r ./js/ ..
-- cp .travis/deploy_key.enc ..
+- mv ./*.html ..
+- mv ./css/ ..
+- mv ./scss/ ..
+- mv ./js/ ..
+- mv ./fonts/ ..
+- mv .travis/deploy_key.enc ..
 - git fetch origin gh-pages:gh-pages
 - git checkout gh-pages
 - git submodule init
 - git submodule update
-- rm -rf index.html css js
-- mv ../index.html ./index.html
-- mv ../css/ .
-- mv ../js/ .
-- git add ./index.html ./css/ ./js/ fonts/
+- rm -rf ./css/ ./scss/faufablab/ ./scss/*.scss ./js/ ./fonts/bootstrap/
+- mv -f ../*.html .
+- mv -f ../css/ .
+- mv -f ../scss/faufablab ../scss/*.scss ./scss/
+- mv -f ../js/ .
+- mv -f ../fonts/bootstrap ./fonts/
+- git add --all ./*.html ./css/ ./scss/ ./js/ fonts/
+- git status
 - git config --global user.name "Travis Auto Build"
 - git config --global user.email "travis@fablab.fau.de"
 - git commit -m "${COMMITMESSAGE}"

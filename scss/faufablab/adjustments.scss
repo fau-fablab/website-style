@@ -1,59 +1,43 @@
-/*                     FAU FabLab Bootstrap Theme
- * --------------------------------------------------------------------
- * https://github.com/fau-fablab/website-style    License: CC BY-SA 4.0 */
+//                     FAU FabLab Bootstrap Theme
+// --------------------------------------------------------------------
+//               Unconfigurable adjustments for bootstrap.
+// Before adding rules to this file, double check if you can't add them
+// in `bootstrap.scss` as variable for bs. If so, add also an explicit
+// rule to `theme.scss`.
+// https://github.com/fau-fablab/website-style    License: CC BY-SA 4.0
 
-@import "../fonts/Fira/fira.css";
-@import "mixins.scss";
-
-// color palette
-//--------------------------------------------------------------------
-$fabcube_green:         #209466;
-$fabcube_blue:          #163B64;
-$fabcube_red:           #C42028;
-$highlight_blue:        #2D73A3;
-$highlight_blue_alt:    #275F86;
-$highlight_green:       #A7CE38;
-$highlight_green_alt:   #90B12F;
-$light_green:           #E4EEC1;
-$light_green_alt:       #F4F7E7;
-$dark_gray:             #777777;
-$light_gray:            #E0E3E3;
-$white:                 #ffffff;
-$black:                 #000000;
-
-// other vars
-$anim_dur_def: ".5s"; // the default animation duration
-$line_width: .3em; // the thickness of green lines
+@import "base.scss";
+@import "../mixins.scss";
 
 /* GLOBAL STYLES
  *-------------------------------------------------------------------- */
 
-body {
-    font-family: "Fira Sans";
-    color: $black;
-    @include linear-gradient(to bottom, $light_green 0%, $light_gray 5em, $light_green_alt 100%);
-    background-color: $light_gray;
+html {
+    body {
+        @include linear-gradient(to bottom, $light_green 0%, $gray-lighter 5em, $light_green_alt 100%);
+    }
 }
 
 .content {
     hr {
-        border-color: $dark_gray;
+        border-color: $gray-light;
     }
 
-    a:not(.btn) {
-        @include transition(#{$anim_dur_def}, color);
-        color: $fabcube_green;
-
-        &:hover {
-            text-decoration-line: none;
-            color: $fabcube_red;
-        }
-
-        &:visited {
-            text-decoration-line: none;
-            color: $fabcube_blue;
-        }
-    }
+// disabled, because this doesn't really work
+//    a:not(.btn) {
+//        @include transition(#{$anim_dur_def}, color);
+//        color: $fabcube_green;
+//
+//        &:hover {
+//            text-decoration-line: none;
+//            color: $fabcube_red;
+//        }
+//
+//        &:visited {
+//            text-decoration-line: none;
+//            color: $fabcube_blue;
+//        }
+//    }
 
     img, video {
         max-width: 100%;
@@ -71,7 +55,7 @@ blockquote.blockquote-reverse {
  *-------------------------------------------------------------------- */
 
 @mixin blue_background($direction) {
-    color: $light_gray;
+    color: $gray-lighter;
     @include linear-gradient($direction, $highlight_blue_alt 0%, $highlight_blue 20%, $highlight_blue_alt 100%);
 
     @each $header in (h1, h2, h3) {
@@ -82,8 +66,6 @@ blockquote.blockquote-reverse {
 }
 
 %nav_element {
-    color: $white;
-    background-color: transparent;
     font-weight: bold;
     @include transition(#{$anim_dur_def}, background);
 }
@@ -138,47 +120,17 @@ nav.navbar.navbar-inverse {
         @extend %nav_element;
     }
 
-    .navbar-nav li a:hover,
-    .navbar-nav li a:focus,
-    .dropdown-menu li a:hover,
-    .dropdown-menu li a:focus,
-    .navbar-nav .open .dropdown-menu li a:hover,
-    .navbar-nav .open .dropdown-menu li a:focus,
-    .dropdown .dropdown-toggle:hover {
-        @extend %nav_element_hover;
-    }
-
     .navbar-nav {
         .dropdown .dropdown-menu {
-            color: $white;
-            background-color: rgba($highlight_blue, .9);
-
             .divider {
                 background-color: $highlight_green;
                 height: $line_width;
             }
         }
-
-        .active a,
-        .active a:hover,
-        .dropdown.open .dropdown-toggle {
-            @extend %nav_element_active;
-        }
     }
 
-    .navbar-collapse,
-    .navbar-form {
-        border-color: transparent;
-    }
-
-    .navbar-toggle,
     .navbar-toggle:focus {
-        background-color: transparent;
-        border-color: transparent;
-
-        .icon-bar {
-            background-color: $white;
-        }
+        background-color: transparent; // bs bug?
 
         &:hover {
             background-color: $highlight_green;
@@ -193,11 +145,14 @@ nav.navbar.navbar-inverse {
         background-color: $white;
     }
 
-    .navbar-text,
-    .dropdown-header {
-        color: $light_gray;
+//  .dropdown-header,
+    .navbar-text {
+        color: $gray-lighter;
     }
 }
+
+/* CUSTOM ELEMENTS
+ *-------------------------------------------------------------------- */
 
 nav.well {
     @include blue_background(to bottom);
@@ -206,6 +161,7 @@ nav.well {
 
     a {
         @extend %nav_element;
+        color: $white;
         &:hover {
             @extend %nav_element_hover;
         }
@@ -220,9 +176,6 @@ nav.well {
     }
 }
 
-/* CUSTOM ELEMENTS
- *-------------------------------------------------------------------- */
-
 .fade-down {
     .fade-down-item-animate {
         @include transition(#{$anim_dur_def}, opacity, line-height);
@@ -232,6 +185,7 @@ nav.well {
 
     &:hover {
         .fade-down-item-animate {
+            /* navigation bar user name */
             line-height: 140%; //?
             opacity: 1;
         }
