@@ -4,7 +4,7 @@
 // This are explicit rules which can also be done in `bootstrap.scss` for
 // direct compiling in bs. It is required to build an addtitional bs theme.
  * https://github.com/fau-fablab/website-style    License: CC BY-SA 4.0 */
-@import url(../../fonts/Fira/fira.css);
+@import url("../../fonts/Fira/fira.css");
 /* GLOBAL STYLES
  *-------------------------------------------------------------------- */
 html body {

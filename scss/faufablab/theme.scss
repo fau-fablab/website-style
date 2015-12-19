@@ -5,7 +5,7 @@
 // direct compiling in bs. It is required to build an addtitional bs theme.
  * https://github.com/fau-fablab/website-style    License: CC BY-SA 4.0 */
 
-@import "../../fonts/Fira/fira.css";
+@import url("../../fonts/Fira/fira.css");
 @import "base.scss";
 @import "../mixins.scss";
 
