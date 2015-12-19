@@ -1,0 +1,224 @@
+/*                     FAU FabLab Bootstrap Theme
+ * --------------------------------------------------------------------
+ *               Unconfigurable adjustments for bootstrap.
+ * https://github.com/fau-fablab/website-style    License: CC BY-SA 4.0 */
+
+@import "../mixins.scss";
+
+/* GLOBAL STYLES
+ *-------------------------------------------------------------------- */
+
+html {
+//  font-family: "Fira Sans";
+    color: $black;
+
+    body {
+        @include linear-gradient(to bottom, $light_green 0%, $light_gray 5em, $light_green_alt 100%);
+        background-color: $light_gray;
+    }
+}
+
+.content {
+    hr {
+        border-color: $dark_gray;
+    }
+
+    a:not(.btn) {
+        @include transition(#{$anim_dur_def}, color);
+        color: $fabcube_green;
+
+        &:hover {
+            text-decoration-line: none;
+            color: $fabcube_red;
+        }
+
+        &:visited {
+            text-decoration-line: none;
+            color: $fabcube_blue;
+        }
+    }
+
+    img, video {
+        max-width: 100%;
+    }
+}
+
+blockquote,
+blockquote.blockquote-reverse {
+    border-color: $highlight_green;
+    border-width: $line-width;
+    font-style: oblique;
+}
+
+/* TEMPLATES
+ *-------------------------------------------------------------------- */
+
+@mixin blue_background($direction) {
+    color: $light_gray;
+    @include linear-gradient($direction, $highlight_blue_alt 0%, $highlight_blue 20%, $highlight_blue_alt 100%);
+
+    @each $header in (h1, h2, h3) {
+        #{$header} {
+            text-shadow: rgba($black, .75) -1px 3px 0;
+        }
+    }
+}
+
+%nav_element {
+    color: $white;
+    background-color: transparent;
+    font-weight: bold;
+    @include transition(#{$anim_dur_def}, background);
+}
+%nav_element_hover {
+    color: $white;
+    background-color: $highlight_green;
+}
+%nav_element_active {
+    color: $highlight_blue_alt;
+    background-color: $highlight_green;
+}
+
+/* JUMBOTRON AND FOOTER
+ *-------------------------------------------------------------------- */
+
+.jumbotron {
+    @include blue_background(to bottom);
+
+    a:not(.btn),
+    a:not(.btn):hover,
+    a:not(.btn):visited {
+        text-decoration-line: none;
+        color: $highlight_green;
+    }
+
+    &.intro {
+        margin-bottom: 0px;
+    }
+}
+
+.footer {
+    @extend .jumbotron;
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+/* NAVS
+ *-------------------------------------------------------------------- */
+nav.navbar.navbar-inverse {
+    @include linear-gradient(to right, $highlight_blue_alt 0%, rgba($highlight_blue, .9) 20%, $highlight_blue_alt 100%);
+    border-bottom: $line_width solid $highlight_green;
+
+    .navbar-nav li a,
+    .navbar-brand,
+    .navbar-brand:hover,
+    .navbar-brand:focus,
+    .navbar-toggle,
+    .navbar-nav .open .dropdown-menu li a,
+    .dropdown .dropdown-toggle,
+    .dropdown .dropdown-toggle:focus,
+    .dropdown-menu li a {
+        @extend %nav_element;
+    }
+
+    .navbar-nav li a:hover,
+    .navbar-nav li a:focus,
+    .dropdown-menu li a:hover,
+    .dropdown-menu li a:focus,
+    .navbar-nav .open .dropdown-menu li a:hover,
+    .navbar-nav .open .dropdown-menu li a:focus,
+    .dropdown .dropdown-toggle:hover {
+        @extend %nav_element_hover;
+    }
+
+    .navbar-nav {
+        .dropdown .dropdown-menu {
+            color: $white;
+            background-color: rgba($highlight_blue, .9);
+
+            .divider {
+                background-color: $highlight_green;
+                height: $line_width;
+            }
+        }
+
+        .active a,
+        .active a:hover,
+        .dropdown.open .dropdown-toggle {
+            @extend %nav_element_active;
+        }
+    }
+
+    .navbar-collapse,
+    .navbar-form {
+        border-color: transparent;
+    }
+
+    .navbar-toggle,
+    .navbar-toggle:focus {
+        background-color: transparent;
+        border-color: transparent;
+
+        .icon-bar {
+            background-color: $white;
+        }
+
+        &:hover {
+            background-color: $highlight_green;
+        }
+    }
+
+    a img.img-thumbnail {
+        max-height: 2em;
+        margin-top: -0.5em;
+        margin-bottom: -0.5em;
+        padding: .1em;
+        background-color: $white;
+    }
+
+    .navbar-text,
+    .dropdown-header {
+        color: $light_gray;
+    }
+}
+
+nav.well {
+    @include blue_background(to bottom);
+    font-weight: bold;
+    z-index: 100;
+
+    a {
+        @extend %nav_element;
+        &:hover {
+            @extend %nav_element_hover;
+        }
+    }
+    .active a,
+    a:focus {
+        @extend %nav_element_active;
+    }
+
+    p {
+        border-bottom: $line_width solid $highlight_green;
+    }
+}
+
+/* CUSTOM ELEMENTS
+ *-------------------------------------------------------------------- */
+
+.fade-down {
+    .fade-down-item-animate {
+        @include transition(#{$anim_dur_def}, opacity, line-height);
+        line-height: 0px;
+        opacity: 0;
+    }
+
+    &:hover {
+        .fade-down-item-animate {
+            line-height: 140%; //?
+            opacity: 1;
+        }
+    }
+}
+
+// vim: ts=4 et

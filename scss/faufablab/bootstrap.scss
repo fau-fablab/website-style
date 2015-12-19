@@ -1,0 +1,35 @@
+/*                     FAU FabLab Bootstrap Theme
+ * --------------------------------------------------------------------
+ *  A ready-to-use, adapted bootstrap style. No other css is required. 
+ * https://github.com/fau-fablab/website-style    License: CC BY-SA 4.0 */
+
+@import "../../fonts/Fira.css";
+@import "base.scss";
+
+// Overwrite [Bootstraps variables](http://getbootstrap.com/customize/#less-variables)
+// TODO we should do more configuration here
+//// Font
+$font-family-sans-serif: "Fira Sans";
+$font-family-monospace: "Fira Mono";
+
+//// Colors
+$gray-base: $black;
+
+//// jumbotron
+$jumbotron-color: $light_gray;
+$jumbotron-bg: $highlight_blue_alt;
+
+//// navbar
+$navbar-height: 45px;
+$navbar-inverse-color: $light_gray;
+$navbar-inverse-bg: rgba($highlight_blue, .9);
+$navbar-inverse-link-active-color: $highlight_blue_alt;
+$navbar-inverse-link-active-bg: $highlight_green;
+
+// Import Bootstrap theme
+@import "../bootstrap-sass/assets/stylesheets/bootstrap";
+
+// overwrite not configurable adjustments
+@import "adjustments.scss"
+
+// vim: ts=4 et
