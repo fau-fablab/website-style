@@ -19,6 +19,8 @@ $(DEST)/faufablab_bootstrap.css: $(SRC)/faufablab/bootstrap.scss \
 	# An adjusted bootstrap as standalone
 	mkdir -p $(DEST)
 	$(SASSC) $< $@
+	sed -i 's/@import url("\.\.\/\.\.\/fonts\/Fira\/fira\.css");/@import url("\.\.\/fonts\/Fira\/fira\.css");/' $@
+	sed -i 's/\.\.\/bootstrap-sass\/assets\/fonts\/bootstrap\/glyphicons-halflings-regular/\.\.\/scss\/bootstrap-sass\/assets\/fonts\/bootstrap\/glyphicons-halflings-regular/g' $@
 
 $(DEST)/bs_theme.css: $(SRC)/faufablab/theme.scss \
     $(SRC)/faufablab/base.scss \
@@ -28,5 +30,6 @@ $(DEST)/bs_theme.css: $(SRC)/faufablab/theme.scss \
 	# A bootstrap theme in addition to bootstrap.css
 	mkdir -p $(DEST)
 	$(SASSC) $< $@
+	sed -i 's/@import url("\.\.\/\.\.\/fonts\/Fira\/fira\.css");/@import url("\.\.\/fonts\/Fira\/fira\.css");/' $@
 
-# vim: st=8 ts=8 noe
+# vim: st=8 ts=8 noet
