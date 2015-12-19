@@ -13,8 +13,12 @@
  *-------------------------------------------------------------------- */
 
 html {
+    position: relative;
+    min-height: 100%;
+
     body {
         @include linear-gradient(to bottom, $light_green 0%, $gray-lighter 5em, $light_green_alt 100%);
+        margin-bottom: $footer_heigt;
     }
 }
 
@@ -55,7 +59,7 @@ blockquote.blockquote-reverse {
  *-------------------------------------------------------------------- */
 
 @mixin blue_background($direction) {
-    color: $gray-lighter;
+    color: $white;
     @include linear-gradient($direction, $highlight_blue_alt 0%, $highlight_blue 20%, $highlight_blue_alt 100%);
 
     @each $header in (h1, h2, h3) {
@@ -96,10 +100,23 @@ blockquote.blockquote-reverse {
     }
 }
 
-.footer {
+footer.footer {
     @extend .jumbotron;
-    padding-top: 5em;
-    padding-bottom: 5em;
+    position: absolute;
+    height: $footer_heigt;
+    width: 100%;
+    bottom: 0px;
+    margin-bottom: 0;
+
+	a.btn {
+        text-shadow: rgba($black, .5) 0px 1px 0;
+		@include transition(.5s, box-shadow, transform);
+
+		&:hover {
+			box-shadow: 0px 0px 5px black;
+			transform: scale(1.05);
+		}
+	}
 }
 
 /* NAVS
