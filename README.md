@@ -11,33 +11,30 @@ Usage
 Either add this repo as submodule to your project or add
 
 ```html
-<link rel="stylesheet" href="https://fau-fablab.github.io/website-style/css/faufablab.css" type="text/css" >
+<link rel="stylesheet" href="https://fau-fablab.github.io/website-style/css/faufablab_bootstrap.css" type="text/css" >
 <!-- if you want to use the javascript, also add this: -->
 <script src="https://fau-fablab.github.io/website-style/js/faufablab.js"></script>
 ```
 
-to your bootstrap site.
+instead of `bootstrap.css` to your site.
 
 See https://fau-fablab.github.io/website-style/ for a example.
 
 Contributing
 ------------
 
- - Edit [`./css/faufablab.scss`](./css/faufablab.scss)
+ - Edit the files in [`./scss/faufablab/`](./scss/faufablab)
  - Run [`make`](Makefile) to create the `css`
  - See [`index.html`](index.html) for checking your changes
 
-Please don't write sass code, use scss:
+```
+scss/faufablab/
+├── base.scss         : the basic styles like color definitions, ...
+├── bootstrap.scss    : configuring bootstrap definitions
+└── adjustments.scss  : overwriting bootstrap style, that is not configurable
+```
 
-```
-style.scss ------.
-   ^              \
-   |               \ sass
-   | sass-convert   ------> style.css
-   |               /
-   v              /
-style.sass ------'
-```
+Please don't write sass code, use scss.
 
 LICENSE
 -------
