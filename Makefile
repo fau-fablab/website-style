@@ -2,11 +2,12 @@ SASSC	:= sass		# the sass compiler
 DEST	:= ./css
 SRC	:= ./scss/faufablab
 BS	:= ./scss/bootstrap-sass
+FA	:= ./fonts/font-awesome
 CSS	:= $(DEST)/faufablab_bootstrap.css $(DEST)/bs_theme.css
 
 .PHONY: all clean
 
-all: ${CSS}
+all: $(CSS)
 
 clean:
 	rm -f $(CSS) $(DEST)/*.map
@@ -15,7 +16,8 @@ $(DEST)/faufablab_bootstrap.css: $(SRC)/bootstrap.scss \
     $(SRC)/_base.scss \
     $(SRC)/_adjustments.scss \
     $(SRC)/_mixins.scss \
-    $(BS)/assets/stylesheets/_bootstrap.scss
+    $(wildcard $(BS)/*) \
+    $(wildcard $(FA)/*)
 	# An adjusted bootstrap as standalone
 	mkdir -p $(DEST)
 	$(SASSC) $< $@
@@ -25,7 +27,8 @@ $(DEST)/faufablab_bootstrap.css: $(SRC)/bootstrap.scss \
 $(DEST)/bs_theme.css: $(SRC)/theme.scss \
     $(SRC)/_base.scss \
     $(SRC)/_adjustments.scss \
-    $(SRC)/_mixins.scss
+    $(SRC)/_mixins.scss \
+    $(wildcard $(FA)/*)
 	# A bootstrap theme in addition to bootstrap.css
 	mkdir -p $(DEST)
 	$(SASSC) $< $@

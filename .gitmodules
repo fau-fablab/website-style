@@ -1,8 +1,11 @@
-[submodule "fonts/Fira"]
-	path = fonts/Fira
-	url = https://github.com/mozilla/Fira.git
-	branch = master
 [submodule "scss/bootstrap-sass"]
 	path = scss/bootstrap-sass
 	url = https://github.com/twbs/bootstrap-sass.git
 	branch = 3.3-stable
+[submodule "fonts/Fira"]
+	path = fonts/Fira
+	url = https://github.com/mozilla/Fira.git
+	branch = master
+[submodule "fonts/font-awesome"]
+	path = fonts/font-awesome
+	url = https://github.com/FortAwesome/Font-Awesome.git
