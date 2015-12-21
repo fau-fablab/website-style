@@ -45,7 +45,7 @@ Contributing
 ├── css                       # the output direcory
 ├── fonts
 │   ├── Fira                  # mozillas fira sans repo
-│   └── bootstrap             # fonts used by bootstrap (it is the content from ./scss/bootstrap-sass/assets/fonts)
+│   └── font-awesome          # a icon font similar to halflings glyphicons
 └── scss
     ├── mixins.scss           # useful mixins and functions for sass
     ├── bootstrap-sass        # sass port of twitter bootstrap
@@ -62,7 +62,7 @@ Contributing
                    .- faufablab/bootstrap ---- bootstrap-sass -.                               .--> css/faufablab_bootstrap.css
                   /                  ^                          \                             /          ^ 
                  /                   |                           \                           /           |
-faufablab/base -<                  mixins                         >- faufablab/adjustments -<         fira.css
+faufablab/base -<                  mixins                         >- faufablab/adjustments -<   fira.css & font-awesome.css
                  \                   |                           /                           \           |
                   \                  v                          /                             \          v
                    `----------- faufablab/theme ---------------'                               `--> css/bs_theme.css
@@ -73,6 +73,14 @@ Please don't write sass code, use scss.
 ### Requirements
 
 You need `sass`. It's a ruby gem, but some distros have also packages.
+
+### Updating
+
+The submodules except font-awesome should track branches so a `git submodule foreach git pull` will do the job.
+
+In font-awesome currently the tag `v4.5.0` is checked out and so the commit "t is "hardcoded". Go to [`fonts/font-awesome/`](fonts/font-awesome) and make `git fetch && git checkout v4.5.0`.
+
+To upgrade the modules, change their `branch` in [`./.gitmodules`](.gitmodules) and check out the new tag in font-awesome.
 
 LICENSE
 -------
