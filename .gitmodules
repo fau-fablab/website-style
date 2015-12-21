@@ -6,3 +6,6 @@
 	path = scss/bootstrap-sass
 	url = https://github.com/twbs/bootstrap-sass.git
 	branch = 3.3-stable
+[submodule "fonts/font-awesome"]
+	path = fonts/font-awesome
+	url = https://github.com/FortAwesome/Font-Awesome.git
