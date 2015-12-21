@@ -15,6 +15,16 @@ html body {
   font-family: "Fira Sans";
   color: #000000;
   background-color: #F4F7E7; }
+  html body a {
+    text-decoration: none; }
+
+.content a:not([class]),
+.content .btn.btn-link {
+  color: #209466; }
+  .content a:not([class]):hover,
+  .content .btn.btn-link:hover {
+    color: #163B64;
+    text-decoration: none; }
 
 /* TEMPLATES
  *--------------------------------------------------------------------- 
@@ -64,6 +74,16 @@ html {
 
 .content hr {
   border-color: #777777; }
+.content a:not([class]),
+.content .btn.btn-link {
+  -webkit-transition-property: color;
+  -webkit-transition-duration: .5s;
+  -moz-transition-property: color;
+  -moz-transition-duration: .5s;
+  -o-transition-property: color;
+  -o-transition-duration: .5s;
+  transition-property: color;
+  transition-duration: .5s; }
 .content img, .content video {
   max-width: 100%; }
 

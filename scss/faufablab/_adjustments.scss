@@ -27,21 +27,10 @@ html {
         border-color: $gray-light;
     }
 
-// disabled, because this doesn't really work
-//    a:not(.btn) {
-//        @include transition(#{$anim_dur_def}, color);
-//        color: $fabcube_green;
-//
-//        &:hover {
-//            text-decoration-line: none;
-//            color: $fabcube_red;
-//        }
-//
-//        &:visited {
-//            text-decoration-line: none;
-//            color: $fabcube_blue;
-//        }
-//    }
+    a:not([class]),
+    .btn.btn-link {
+        @include transition(#{$anim_dur_def}, color);
+    }
 
     img, video {
         max-width: 100%;

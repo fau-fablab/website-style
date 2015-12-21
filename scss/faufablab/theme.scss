@@ -16,6 +16,22 @@ html {
         font-family: "Fira Sans";
         color: $black;
         background-color: $light-green_alt;
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.content {
+    a:not([class]),
+    .btn.btn-link {
+        color: $fabcube_green;
+
+        &:hover {
+            color: $fabcube_blue;
+            text-decoration: none;
+        }
     }
 }
 
