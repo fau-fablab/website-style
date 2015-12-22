@@ -14,6 +14,12 @@ Usage
 <link rel="stylesheet" href="https://fau-fablab.github.io/website-style/css/faufablab_bootstrap.css" type="text/css" >
 <!-- if you want to use the javascript, also add this: -->
 <script src="https://fau-fablab.github.io/website-style/js/faufablab.js"></script>
+
+<!-- ... -->
+
+<script src="js/jquery-1.11.3.min.js" integrity="sha384-+54fLHoW8AHu3nHtUxs9fW2XKOZ2ZwKHB5olRtKSDTKJIb1Na1EceFZMS8E72mzW" crossorigin="anonymous"></script>
+<script src="js/bootstrap-3.3.6.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="js/faufablab.js"></script>
 ```
 
  - If you need this as a **theme additional** to bootstrap, you can use `bs_theme.css` instead of `faufablab_bootstrap.css`.
@@ -30,10 +36,12 @@ Contributing
    - If you can't use the bootstrap configuration write your style in [`scss/faufablab/adjustments.scss`](scss/faufablab/adjustments.scss)
  - Run [`make`](Makefile) to create the `css`
  - See [`index.html`](index.html) for checking your changes and look at [`index-theme.html`](index-theme.html) that it does not completely break...
+ - Run `make integrity` and update the `index*.html` example sites
 
 ### Submodules
 
  - fonts/Fira
+ - fonts/font-awesome
  - scss/bootstrap-sass
 
 -> `clone --recurse-submodules` and `git submodule init && git submodule update`
@@ -42,18 +50,22 @@ Contributing
 
 ```tree
 .
-├── css                       # the output direcory
+├── css                         # the output direcory
 ├── fonts
-│   ├── Fira                  # mozillas fira sans repo
-│   └── font-awesome          # a icon font similar to halflings glyphicons
+│   ├── Fira                    # mozillas fira sans repo
+│   └── font-awesome            # a icon font similar to halflings glyphicons
+├── js
+│   ├── bootstrap-3.3.6.min.js  # a minified Bootstrap javascript [blob](https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js)
+│   ├── jquery-1.11.3.min.js    # a minified [jQuery](https://github.com/jquery/jquery) [blob](http://code.jquery.com/jquery-1.11.3.min.js)
+│   └── faufablab.js            # fancy animations and such hipster shit
 └── scss
-    ├── mixins.scss           # useful mixins and functions for sass
-    ├── bootstrap-sass        # sass port of twitter bootstrap
-    └── faufablab/
-        ├── base.scss         # the basic styles like color definitions, ...
-        ├── adjustments.scss  # overwriting bootstrap style, that is not configurable
-        ├── bootstrap.scss    # configuring bootstrap definitions
-        └── theme.scss        # overwriting bootstrap style, that is also configurable
+    ├── bootstrap-sass          # sass port of twitter bootstrap
+    └── faufablab/              # The actual style written in scss (sass)
+        ├── _mixins.scss        # useful mixins and functions for sass
+        ├── _base.scss          # the basic styles like color definitions, ...
+        ├── _adjustments.scss   # overwriting bootstrap style, that is not configurable
+        ├── bootstrap.scss      # configuring bootstrap definitions
+        └── theme.scss          # overwriting bootstrap style, that is also configurable
 ```
 
 ### Build structure:
@@ -81,6 +93,8 @@ The submodules except font-awesome should track branches so a `git submodule for
 In font-awesome currently the tag `v4.5.0` is checked out and so the commit "t is "hardcoded". Go to [`fonts/font-awesome/`](fonts/font-awesome) and make `git fetch && git checkout v4.5.0`.
 
 To upgrade the modules, change their `branch` in [`./.gitmodules`](.gitmodules) and check out the new tag in font-awesome.
+
+As the [`./js`](./js) folder contains only blobs, you only have to download these blobs manually (e.g. from a cdn).
 
 LICENSE
 -------
